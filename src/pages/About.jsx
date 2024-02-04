@@ -12,7 +12,7 @@ export const About = () => {
 
   return (
     <>
-      <h1>Happy Hacking!</h1>
+      <h1>Happy Hacking ABOUT!</h1>
     </>
   );
 };

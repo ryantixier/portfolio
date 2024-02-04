@@ -18,12 +18,18 @@ function App() {
   return (
     <>
       <Router>
+        <Nav />
+        {/* <Header /> */}
         <Routes>
           <Route path="/" element={<About />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/resume" element={<Resume />} />
+          <Route path="/services" element={<Portfolio />} />
+          <Route path="/meet-the-team" element={<Resume />} />
         </Routes>
       </Router>
+      <br />
+      <br />
+      <br />
+      <Footer />
     </>
   );
 }

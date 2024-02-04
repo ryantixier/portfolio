@@ -12,7 +12,7 @@ export const Resume = () => {
 
   return (
     <>
-      <h1>Happy Hacking!</h1>
+      <h1>Happy Hacking RESUME!</h1>
     </>
   );
 };

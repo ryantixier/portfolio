@@ -12,7 +12,7 @@ export const Portfolio = () => {
 
   return (
     <>
-      <h1>Happy Hacking!</h1>
+      <h1>Happy Hacking PORTFOLIO!</h1>
     </>
   );
 };
