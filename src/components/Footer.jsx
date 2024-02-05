@@ -5,7 +5,7 @@ import * as React from "react";
 import { useRef } from "react";
 
 // local styles
-import "../App.css";
+import "../assets/App.css";
 
 // local components
 

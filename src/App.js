@@ -12,18 +12,30 @@ import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Resume from "./pages/Resume";
 
-import "./App.css";
+// ...styles
+import "./assets/App.css";
+
+// sparkley
+import ReactSparkle from "react-sparkle";
 
 function App() {
   return (
     <>
       <Router>
+        <ReactSparkle
+          color="white"
+          count={25}
+          minSize={7}
+          maxSize={12}
+          overflowPx={0}
+          fadeOutSpeed={0.5}
+          flicker={false}
+        />
         <Nav />
-        {/* <Header /> */}
         <Routes>
           <Route path="/" element={<About />} />
-          <Route path="/services" element={<Portfolio />} />
-          <Route path="/meet-the-team" element={<Resume />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/resume" element={<Resume />} />
         </Routes>
       </Router>
       <br />
