@@ -3,12 +3,11 @@
 
 /* applies google font to whole app */
 * {
-  font-family: "Space Grotesk", "Courier New", Courier, monospace;
+  font-family: "Space Grotesk", "Courier New", Courier, monospace !important;
   /* color: aliceblue; */
 }
 
 #root {
-  /* margin: 0; */
   background-color: black;
   min-height: 100vh;
 }
@@ -21,6 +20,14 @@ h1 {
 /* NAV */
 /* NAV */
 
+/* form - contact modal */
+.contact-form {
+  text-align: center;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-bottom: 1%;
+}
+
 /* FOOTER */
 /* FOOTER */
 /* FOOTER */
@@ -29,5 +36,5 @@ h1 {
   margin: auto;
   font-size: x-large;
   text-align: center;
-  width: 200px;
+  width: 55%;
 }

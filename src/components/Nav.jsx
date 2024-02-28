@@ -1,6 +1,7 @@
 // IMPORTS
 import * as React from "react";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 // local components
 import ContactForm from "./ContactForm";
@@ -26,6 +27,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Modal from "@mui/material/Modal";
 import PropTypes from "prop-types";
 import Slide from "@mui/material/Slide";
+import MuiAlert from "@mui/material/Alert";
+import Snackbar from "@mui/material/Snackbar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
@@ -34,6 +37,9 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import { createTheme } from "@mui/material/styles";
 import { styled } from "@mui/material/styles";
+
+// emailjs - contact form
+import emailjs from "@emailjs/browser";
 
 // routing information
 const pages = ["About", "Portfolio", "Resume", "Contact"];
@@ -48,8 +54,8 @@ const theme = createTheme({
       contrastText: "#000000", // dark color - black
     },
     success: {
-      main: "#000000", // dark color - aliceblue
-      contrastText: "#f0f8ff", // light black
+      main: "#000000", // dark color - black
+      contrastText: "#f0f8ff", // light aliceblue
     },
   },
 });
@@ -79,7 +85,7 @@ const modalStyleSm = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 300,
+  width: "85%",
   bgcolor: "#FFFFFF",
   border: "2px solid #f0f8ff",
   boxShadow: 24,
@@ -116,14 +122,44 @@ HideOnScroll.propTypes = {
   children: PropTypes.element.isRequired,
 };
 
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 export const Nav = (props) => {
-  // styling
+  // styling - media query
   const tabSize = useMediaQuery("(min-width:468px)", { noSsr: true });
+
+  // email js
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_z87h71g",
+        "template_ly1qfsa",
+        form.current,
+        "aK6ZalbFWyQ1ymtan"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          handleCloseModal();
+          handleOpenSnack();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   //Hooks
   const [openDrawer, setOpenDrawer] = React.useState(false);
 
   const [openModal, setOpenModal] = React.useState(false);
+
+  const [openSnack, setOpenSnack] = React.useState(false);
 
   const [navigation, setNavigation] = React.useState("");
 
@@ -145,6 +181,16 @@ export const Nav = (props) => {
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
 
+  const handleOpenSnack = () => setOpenSnack(true);
+
+  const handleCloseSnack = (event, reason) => {
+    if (reason === "clickaway") {
+      setOpenSnack(false);
+    }
+    setOpenSnack(false);
+    return;
+  };
+
   const handleNavigation = (event) => {
     setNavigation(event.target.value);
   };
@@ -156,7 +202,9 @@ export const Nav = (props) => {
         <AppBar theme={theme}>
           <Container maxWidth="xl">
             <Toolbar disableGutters>
-              {/* CHANGE TO H6 */}
+              {/* SM-MD DEVICE WIDTH */}
+              {/* SM-MD DEVICE WIDTH */}
+              {/* SM-MD DEVICE WIDTH */}
               <Typography
                 variant="h6"
                 noWrap
@@ -185,6 +233,9 @@ export const Nav = (props) => {
                   <MenuIcon />
                 </IconButton>
               </Box>
+              {/* menu */}
+              {/* menu */}
+              {/* menu */}
               <Drawer
                 anchor="top"
                 open={openDrawer}
@@ -276,6 +327,9 @@ export const Nav = (props) => {
                   </List>
                 </Box>
               </Drawer>
+              {/* MD+ DEVICE WIDTH */}
+              {/* MD+ DEVICE WIDTH */}
+              {/* MD+ DEVICE WIDTH */}
               <Typography
                 className="nav-title-font"
                 variant="h6"
@@ -295,6 +349,9 @@ export const Nav = (props) => {
               >
                 <div className="nav-logo"></div>
               </Typography>
+              {/* app-bar */}
+              {/* app-bar */}
+              {/* app-bar */}
               <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                 {/* ABOUT */}
                 {/* ABOUT */}
@@ -346,27 +403,39 @@ export const Nav = (props) => {
                 <Fade in={openModal}>
                   {!tabSize ? (
                     <Box sx={modalStyleSm}>
-                      <ContactForm />
-                      <ColorButton
-                        onClick={handleCloseModal}
-                        variant="outlined"
-                        size="large"
-                        fullWidth
+                      <form
+                        className="contact-form"
+                        ref={form}
+                        onSubmit={sendEmail}
                       >
-                        Close
-                      </ColorButton>
+                        <ContactForm />
+                        <ColorButton
+                          onClick={handleCloseModal}
+                          variant="contained"
+                          size="large"
+                          fullWidth
+                        >
+                          Close
+                        </ColorButton>
+                      </form>
                     </Box>
                   ) : (
                     <Box sx={modalStyleLg}>
-                      <ContactForm />
-                      <ColorButton
-                        onClick={handleCloseModal}
-                        variant="outlined"
-                        size="large"
-                        fullWidth
+                      <form
+                        className="contact-form"
+                        ref={form}
+                        onSubmit={sendEmail}
                       >
-                        Close
-                      </ColorButton>
+                        <ContactForm />
+                        <ColorButton
+                          onClick={handleCloseModal}
+                          variant="contained"
+                          size="large"
+                          fullWidth
+                        >
+                          Close
+                        </ColorButton>
+                      </form>
                     </Box>
                   )}
                 </Fade>
@@ -375,6 +444,15 @@ export const Nav = (props) => {
           </Container>
         </AppBar>
       </HideOnScroll>
+      <Snackbar
+        open={openSnack}
+        autoHideDuration={4000}
+        onClose={handleCloseSnack}
+      >
+        <Alert severity="success" color="info">
+          Form Submitted
+        </Alert>
+      </Snackbar>
       <Toolbar />
     </>
   );

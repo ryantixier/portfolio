@@ -14,6 +14,7 @@ import Resume from "./pages/Resume";
 
 // ...styles
 import "./assets/App.css";
+import "./assets/imageSource.css";
 
 // sparkley
 import ReactSparkle from "react-sparkle";
@@ -21,16 +22,16 @@ import ReactSparkle from "react-sparkle";
 function App() {
   return (
     <>
+      <ReactSparkle
+        color="white"
+        count={20}
+        minSize={7}
+        maxSize={12}
+        overflowPx={0}
+        fadeOutSpeed={0.7}
+        flicker={false}
+      />
       <Router>
-        <ReactSparkle
-          color="white"
-          count={25}
-          minSize={7}
-          maxSize={12}
-          overflowPx={0}
-          fadeOutSpeed={0.5}
-          flicker={false}
-        />
         <Nav />
         <Routes>
           <Route path="/" element={<About />} />
