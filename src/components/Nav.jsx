@@ -8,7 +8,7 @@ import ContactForm from "./ContactForm";
 
 // local styles
 import "../assets/App.css";
-// import "../assets/imageSource.css";
+import "../assets/imageSource.css";
 
 // Material UI components
 import AppBar from "@mui/material/AppBar";
