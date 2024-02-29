@@ -352,7 +352,13 @@ export const Nav = (props) => {
               {/* app-bar */}
               {/* app-bar */}
               {/* app-bar */}
-              <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  display: { xs: "none", md: "flex" },
+                  justifyContent: "space-around",
+                }}
+              >
                 {/* ABOUT */}
                 {/* ABOUT */}
                 <NavButton
