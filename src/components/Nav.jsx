@@ -277,6 +277,7 @@ export const Nav = (props) => {
                       sx={{
                         color: "inherit",
                       }}
+                      onClick={scrollToPageTitle}
                     >
                       <ListItemButton
                         onClick={handleCloseDrawer}
@@ -297,6 +298,7 @@ export const Nav = (props) => {
                       sx={{
                         color: "inherit",
                       }}
+                      onClick={scrollToPageTitle}
                     >
                       <ListItemButton
                         onClick={handleCloseDrawer}
@@ -376,6 +378,7 @@ export const Nav = (props) => {
                   component={Link}
                   to={paths[1]}
                   value={pages[1]}
+                  onClick={scrollToPageTitle}
                   color="inherit"
                 >
                   {pages[1]}
@@ -386,6 +389,7 @@ export const Nav = (props) => {
                   component={Link}
                   to={paths[2]}
                   value={pages[2]}
+                  onClick={scrollToPageTitle}
                   color="inherit"
                 >
                   {pages[2]}

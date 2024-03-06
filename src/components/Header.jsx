@@ -5,6 +5,9 @@
 // general
 import * as React from "react";
 
+// material ui icons
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+
 // LOCAL...
 // LOCAL...
 
@@ -31,6 +34,15 @@ export const Header = () => {
           Full-stack web developer, space nerd, and all around lovable rascal.
         </h3>
       </div>
+      <br />
+      <ArrowDownwardIcon fontSize="large" id="pageTitle" />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 };
