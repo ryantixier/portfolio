@@ -400,56 +400,48 @@ export const Nav = (props) => {
                   {pages[3]}
                 </NavButton>
               </Box>
-              <Modal
-                open={openModal}
-                onClose={handleCloseModal}
-                aria-labelledby="contact-modal"
-                aria-describedby="contact-modal-description"
-              >
-                <Fade in={openModal}>
-                  {!tabSize ? (
-                    <Box sx={modalStyleSm}>
-                      <form
-                        className="contact-form"
-                        ref={form}
-                        onSubmit={sendEmail}
-                      >
-                        <ContactForm />
-                        <ColorButton
-                          onClick={handleCloseModal}
-                          variant="contained"
-                          size="large"
-                          fullWidth
-                        >
-                          Close
-                        </ColorButton>
-                      </form>
-                    </Box>
-                  ) : (
-                    <Box sx={modalStyleLg}>
-                      <form
-                        className="contact-form"
-                        ref={form}
-                        onSubmit={sendEmail}
-                      >
-                        <ContactForm />
-                        <ColorButton
-                          onClick={handleCloseModal}
-                          variant="contained"
-                          size="large"
-                          fullWidth
-                        >
-                          Close
-                        </ColorButton>
-                      </form>
-                    </Box>
-                  )}
-                </Fade>
-              </Modal>
             </Toolbar>
           </Container>
         </AppBar>
       </HideOnScroll>
+      <Modal
+        open={openModal}
+        onClose={handleCloseModal}
+        aria-labelledby="contact-modal"
+        aria-describedby="contact-modal-description"
+      >
+        <Fade in={openModal}>
+          {!tabSize ? (
+            <Box sx={modalStyleSm}>
+              <form className="contact-form" ref={form} onSubmit={sendEmail}>
+                <ContactForm />
+                <ColorButton
+                  onClick={handleCloseModal}
+                  variant="contained"
+                  size="large"
+                  fullWidth
+                >
+                  Close
+                </ColorButton>
+              </form>
+            </Box>
+          ) : (
+            <Box sx={modalStyleLg}>
+              <form className="contact-form" ref={form} onSubmit={sendEmail}>
+                <ContactForm />
+                <ColorButton
+                  onClick={handleCloseModal}
+                  variant="contained"
+                  size="large"
+                  fullWidth
+                >
+                  Close
+                </ColorButton>
+              </form>
+            </Box>
+          )}
+        </Fade>
+      </Modal>
       <Snackbar
         open={openSnack}
         autoHideDuration={4000}

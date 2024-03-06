@@ -5,16 +5,20 @@ import * as React from "react";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 // local
-// ... comps
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
-import About from "./pages/About";
-import Portfolio from "./pages/Portfolio";
-import Resume from "./pages/Resume";
 
 // ...styles
 import "./assets/App.css";
 import "./assets/imageSource.css";
+
+// ...pages
+import About from "./pages/About";
+import Portfolio from "./pages/Portfolio";
+import Resume from "./pages/Resume";
+
+// ... comps
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
 
 // sparkley
 import ReactSparkle from "react-sparkle";
@@ -33,6 +37,7 @@ function App() {
       />
       <Router>
         <Nav />
+        <Header />
         <Routes>
           <Route path="/" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />

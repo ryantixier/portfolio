@@ -32,16 +32,23 @@ export default function Footer() {
     <>
       <Box
         sx={{
-          borderTop: "40px blue",
+          position: "sticky",
+          bottom: 10,
+          left: 0,
+        }}
+      >
+        <div className="background-img" />
+      </Box>
+      <Box
+        sx={{
           color: "black",
           position: "fixed",
           bottom: 0,
           left: 0,
           right: 0,
+          zIndex: 100,
         }}
       >
-        <div className="background-img" />
-
         <BottomNavigation showLabels>
           <div className="footer-name">Ryan Tixier</div>
           <BottomNavigationAction

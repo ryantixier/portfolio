@@ -2,7 +2,7 @@
 .background-img {
   background-image: url("./images/AstroRy-revamp.png");
   background-repeat: no-repeat;
-  background-position: left 0px bottom 0px;
+  background-position: left 0px bottom -1px;
   background-size: contain;
   height: 300px;
   width: 300px;
@@ -27,4 +27,15 @@
   display: flex;
   margin-top: 2px;
   margin-bottom: 2px;
+}
+
+/* header */
+.header-planet {
+  background: url("./images/earth.jpeg") center center;
+  background-size: contain;
+  width: 370px;
+  height: 370px;
+  position: relative;
+  background-color: #f0ffff;
+  border-radius: 50% 50% 50% 50%;
 }

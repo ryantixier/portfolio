@@ -4,6 +4,7 @@
 import * as React from "react";
 
 // local
+import "../assets/App.css";
 
 export const Portfolio = () => {
   //Hooks
@@ -12,7 +13,7 @@ export const Portfolio = () => {
 
   return (
     <>
-      <h1>Happy Hacking PORTFOLIO!</h1>
+      <h1 className="increase-z">Happy Hacking PORTFOLIOOOOOO!</h1>
     </>
   );
 };
