@@ -2,6 +2,7 @@
 
 // general
 import * as React from "react";
+import { useLocation } from "react-router-dom";
 
 // local styles
 import "../assets/App.css";
@@ -23,10 +24,27 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 const LinkedIn = "https://www.linkedin.com/in/ryan-tixier/";
 const GitHub = "https://github.com/ryantixier";
 
-export default function Footer() {
+export const Footer = () => {
   // Hooks
+  const location = useLocation();
+
+  let displayText = "";
 
   // Functions
+  switch (location.pathname) {
+    case "/":
+      displayText = "About";
+      break;
+    case "/portfolio":
+      displayText = "Portfolio";
+      break;
+    case "/resume":
+      displayText = "Resume";
+      break;
+    default:
+      displayText = "";
+      break;
+  }
 
   return (
     <>
@@ -37,7 +55,9 @@ export default function Footer() {
           left: 0,
         }}
       >
-        <div className="background-img" />
+        <div className="background-img">
+          <span>{displayText}</span>
+        </div>
       </Box>
       <Box
         sx={{
@@ -69,4 +89,5 @@ export default function Footer() {
       </Box>
     </>
   );
-}
+};
+export default Footer;

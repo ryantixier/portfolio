@@ -35,13 +35,11 @@ export const Header = () => {
         </h3>
       </div>
       <br />
-      <ArrowDownwardIcon fontSize="large" id="pageTitle" />
+      <br />
+      <ArrowDownwardIcon fontSize="large" />
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <hr id="pageTitle" />
       <br />
     </div>
   );

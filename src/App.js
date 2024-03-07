@@ -43,11 +43,11 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/resume" element={<Resume />} />
         </Routes>
+        <br />
+        <br />
+        <br />
+        <Footer />
       </Router>
-      <br />
-      <br />
-      <br />
-      <Footer />
     </>
   );
 }

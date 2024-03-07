@@ -12,7 +12,8 @@ export const About = () => {
 
   return (
     <>
-      <h1>Happy Hacking ABOUT!</h1>
+      <h1>ABOUT</h1>
+      <h2>Greetings, Earthling!</h2>
     </>
   );
 };

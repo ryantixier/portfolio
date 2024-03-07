@@ -6,6 +6,15 @@
   background-size: contain;
   height: 300px;
   width: 300px;
+  position: relative;
+}
+.background-img span {
+  position: absolute;
+  top: 170px;
+  left: 45px;
+  font-size: 1.3em;
+  background-color: #000000af;
+  border: ridge azure 3px;
 }
 
 /* navigation menu logo */
