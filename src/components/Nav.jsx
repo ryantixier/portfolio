@@ -18,7 +18,6 @@ import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
 import Drawer from "@mui/material/Drawer";
 import Divider from "@mui/material/Divider";
-// import Fade from "@mui/material/Fade";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -187,7 +186,6 @@ export const Nav = (props) => {
       setOpenSnack(false);
     }
     setOpenSnack(false);
-    return;
   };
 
   const handleNavigation = (event) => {
