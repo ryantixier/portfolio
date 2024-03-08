@@ -18,7 +18,7 @@ import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
 import Drawer from "@mui/material/Drawer";
 import Divider from "@mui/material/Divider";
-import Fade from "@mui/material/Fade";
+// import Fade from "@mui/material/Fade";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -37,6 +37,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import { createTheme } from "@mui/material/styles";
 import { styled } from "@mui/material/styles";
+import Zoom from "@mui/material/Zoom";
 
 // emailjs - contact form
 import emailjs from "@emailjs/browser";
@@ -82,9 +83,8 @@ const NavButton = styled(Button)(() => ({
 // ... modal style for small media queries
 const modalStyleSm = {
   position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
+  top: "calc(50% - 42.5%)", // 42.5% = 85% / 2
+  left: "calc(50% - 42.5%)", //  42.5% = 85% / 2
   width: "85%",
   bgcolor: "#FFFFFF",
   border: "2px solid #f0f8ff",
@@ -94,10 +94,9 @@ const modalStyleSm = {
 };
 // ... modal style for medium/large media queries
 const modalStyleLg = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
+  position: "absolute ",
+  top: "calc(50% - 225px)", // 225px = 450px / 2
+  left: "calc(50% - 225px)", // 225px = 450px / 2
   width: 450,
   bgcolor: "#FFFFFF",
   border: "2px solid #f0f8ff",
@@ -414,7 +413,7 @@ export const Nav = (props) => {
         aria-labelledby="contact-modal"
         aria-describedby="contact-modal-description"
       >
-        <Fade in={openModal}>
+        <Zoom in={openModal}>
           {!tabSize ? (
             <Box sx={modalStyleSm}>
               <form className="contact-form" ref={form} onSubmit={sendEmail}>
@@ -444,7 +443,7 @@ export const Nav = (props) => {
               </form>
             </Box>
           )}
-        </Fade>
+        </Zoom>
       </Modal>
       <Snackbar
         open={openSnack}
