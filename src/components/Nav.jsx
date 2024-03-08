@@ -82,10 +82,10 @@ const NavButton = styled(Button)(() => ({
 
 // ... modal style for small media queries
 const modalStyleSm = {
+  width: "85%",
   position: "absolute",
   top: "calc(50% - 42.5%)", // 42.5% = 85% / 2
   left: "calc(50% - 42.5%)", //  42.5% = 85% / 2
-  width: "85%",
   bgcolor: "#FFFFFF",
   border: "2px solid #f0f8ff",
   boxShadow: 24,
@@ -94,10 +94,10 @@ const modalStyleSm = {
 };
 // ... modal style for medium/large media queries
 const modalStyleLg = {
+  width: 450,
   position: "absolute ",
   top: "calc(50% - 225px)", // 225px = 450px / 2
   left: "calc(50% - 225px)", // 225px = 450px / 2
-  width: 450,
   bgcolor: "#FFFFFF",
   border: "2px solid #f0f8ff",
   boxShadow: 24,
