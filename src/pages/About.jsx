@@ -69,7 +69,16 @@ export const About = () => {
             </IconButton>
           </div>
         </div>
-        <div id="pageContent"></div>
+        <div id="pageContent">
+          {/* SECTION TITLE: ABOUT ME */}
+          <div className="section-title">
+            <h2>About Me</h2>
+          </div>
+          {/* SECTION TITLE: EXPLORE AWAY */}
+          <div className="section-title">
+            <h2>Explore Away...</h2>
+          </div>
+        </div>
       </div>
     </>
   );
