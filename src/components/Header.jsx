@@ -24,6 +24,7 @@ import "../assets/imageSource.css";
 // ... styles
 const iconButtonStyle = {
   zIndex: 10,
+  color: "white",
   background: "#e0e0e080",
   "&:hover": {
     color: "black",
@@ -55,17 +56,20 @@ export const Header = () => {
           color="inherit"
           sx={iconButtonStyle}
         >
-          <ArrowDownwardIcon fontSize="large" />
+          <ArrowDownwardIcon fontSize="large" color="inherit" />
         </IconButton>
+        <br />
+        <br />
       </div>
       <br />
       <br />
       <br />
       <br />
       <br />
-      <br />
-      <br />
       <hr id="pageTitle" />
+      <br />
+      <br />
+      <br />
       <br />
       <br />
     </div>
