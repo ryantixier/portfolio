@@ -44,35 +44,29 @@ export const Header = () => {
   };
 
   return (
-    <div className="header-container">
-      <div className="header-planet" />
-      <div className="header-textbox">
-        <h1>Welcome to the Portfolio of Ryan Tixier:</h1>
-        <h3>
-          Full-stack web developer, space nerd, and all around lovable rascal.
-        </h3>
-        <IconButton
-          onClick={scrollToPageTitle}
-          color="inherit"
-          sx={iconButtonStyle}
-        >
-          <ArrowDownwardIcon fontSize="large" color="inherit" />
-        </IconButton>
-        <br />
-        <br />
+    <>
+      <div className="header-container">
+        <div className="header-planet" />
+        <div className="header-textbox">
+          <h1>Welcome to the Portfolio of Ryan Tixier:</h1>
+          <h3>
+            Full-stack web developer, space nerd, and all around lovable rascal.
+          </h3>
+          <br />
+          <IconButton
+            onClick={scrollToPageTitle}
+            color="inherit"
+            sx={iconButtonStyle}
+          >
+            <ArrowDownwardIcon fontSize="large" color="inherit" />
+          </IconButton>
+          <br />
+        </div>
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       <hr id="pageTitle" />
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-    </div>
+    </>
   );
 };
 

@@ -1,6 +1,12 @@
 /* import font from google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Nabla&family=Space+Grotesk:wght@300;600&display=swap");
 
+/* GENERAL/GLOBAL */
+/* GENERAL/GLOBAL */
+/* GENERAL/GLOBAL */
+/* GENERAL/GLOBAL */
+/* GENERAL/GLOBAL */
+
 /* applies google font to whole app */
 * {
   font-family: "Space Grotesk", "Courier New", Courier, monospace !important;
@@ -12,6 +18,12 @@
   color: #f0ffff;
   min-height: 100vh;
 }
+
+/* COMPONENTS */
+/* COMPONENTS */
+/* COMPONENTS */
+/* COMPONENTS */
+/* COMPONENTS */
 
 /* NAV */
 /* NAV */
@@ -32,7 +44,7 @@
 /* NOTE: .header-planet can be found in imageSource.css */
 
 .header-container {
-  min-height: 500px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,6 +62,11 @@
   text-align: center;
   color: #f0ffff;
   text-shadow: 1px 2px black;
+}
+
+#pageTitle {
+  width: 0;
+  height: 0;
 }
 
 /* FOOTER */
@@ -71,9 +88,10 @@
 .increase-z {
   position: relative;
   z-index: 10;
-  background-color: #00000080;
 }
 
+/* PAGES */
+/* PAGES */
 /* PAGES */
 /* PAGES */
 /* PAGES */

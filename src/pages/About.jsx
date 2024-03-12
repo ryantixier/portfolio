@@ -25,7 +25,6 @@ import "../assets/imageSource.css";
 
 // ... styles
 const iconButtonStyle = {
-  zIndex: 11,
   color: "white",
   background: "#e0e0e080",
   "&:hover": {
@@ -52,13 +51,14 @@ export const About = () => {
   return (
     <>
       <div>
-        <div className="page-intro">
+        <div className="page-intro increase-z">
           <h1 data-aos="fade-right" data-aos-duration="700">
             Greetings, Earthling!
           </h1>
           <h4 data-aos="fade-left" data-aos-duration="1200">
             You've made it Ryan Tixier's online portfolio.
           </h4>
+          <br />
           <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="800">
             <IconButton
               onClick={scrollToPageContent}
@@ -69,7 +69,10 @@ export const About = () => {
             </IconButton>
           </div>
         </div>
-        <div id="pageContent">
+        <div id="pageContent" style={{ height: "1000px" }}>
+          <br />
+          <br />
+          <br />
           {/* SECTION TITLE: ABOUT ME */}
           <div className="section-title">
             <h2>About Me</h2>
