@@ -28,11 +28,11 @@ function App() {
     <>
       <ReactSparkle
         color="white"
-        count={20}
+        count={25}
         minSize={7}
         maxSize={12}
         overflowPx={0}
-        fadeOutSpeed={0.7}
+        fadeOutSpeed={0.5}
         flicker={false}
       />
       <Router>

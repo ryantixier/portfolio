@@ -2,7 +2,12 @@
 
 // general
 import * as React from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+
+// ANIMATIONS
+// framer imports
+import { motion } from "framer-motion";
 
 // local styles
 import "../assets/App.css";
@@ -24,13 +29,39 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 const LinkedIn = "https://www.linkedin.com/in/ryan-tixier/";
 const GitHub = "https://github.com/ryantixier";
 
+// inline styles
+const bottNavStyle = {
+  height: "85px",
+  borderTop: "2px inset #e0e0e0",
+};
+
 export const Footer = () => {
   // Hooks
+  const [yPosition, setYPosition] = useState("0%");
+  const [xPosition, setXPosition] = useState("0px");
+
   const location = useLocation();
 
   let displayText = "";
 
   // Functions
+  useEffect(() => {
+    // adjusts the position of the background image based on the user's scroll position
+    const handleScroll = () => {
+      const position = window.scrollY;
+
+      // Trigger animation when the user scrolls down
+      if (position > 0) {
+        setYPosition("41%");
+        setXPosition("-47px");
+      } else {
+        setYPosition("0%");
+        setXPosition("0px");
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+  }, []);
+
   switch (location.pathname) {
     case "/":
       displayText = "About";
@@ -53,11 +84,16 @@ export const Footer = () => {
           position: "sticky",
           bottom: 10,
           left: 0,
+          overflow: "hidden",
         }}
       >
-        <div className="background-img">
+        <motion.div
+          className="background-img"
+          animate={{ x: xPosition, y: yPosition }}
+          transition={{ type: "spring", stiffness: 50, damping: 15 }}
+        >
           <span>{displayText}</span>
-        </div>
+        </motion.div>
       </Box>
       <Box
         sx={{
@@ -69,7 +105,7 @@ export const Footer = () => {
           zIndex: 100,
         }}
       >
-        <BottomNavigation showLabels>
+        <BottomNavigation showLabels sx={bottNavStyle}>
           <div className="footer-name">Ryan Tixier</div>
           <BottomNavigationAction
             component={Link}

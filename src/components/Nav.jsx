@@ -165,7 +165,10 @@ export const Nav = (props) => {
   const scrollToPageTitle = () => {
     const pageTitleElement = document.getElementById("pageTitle");
     if (pageTitleElement) {
-      pageTitleElement.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        pageTitleElement.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+      //setTImeout function is used to allow the page to render the pageTitle element before scrolling to it; troubleshoots issue where the page would not scroll to the pageTitle element fully
     }
   };
 

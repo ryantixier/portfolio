@@ -5,6 +5,10 @@ import * as React from "react";
 
 // local
 
+// ... styles
+import "../assets/App.css";
+import "../assets/imageSource.css";
+
 export const About = () => {
   //Hooks
 
@@ -12,8 +16,11 @@ export const About = () => {
 
   return (
     <>
-      <h1>ABOUT</h1>
+      <h1 className="page-intro">Greetings, Earthling!</h1>
       <h2>Greetings, Earthling!</h2>
+      <div style={{ height: "1000px" }}>
+        {/* this is just to make the page scrollable */}
+      </div>
     </>
   );
 };

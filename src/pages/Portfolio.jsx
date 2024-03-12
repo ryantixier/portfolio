@@ -13,7 +13,10 @@ export const Portfolio = () => {
 
   return (
     <>
-      <h1 className="increase-z">Happy Hacking PORTFOLIOOOOOO!</h1>
+      <h1 className="page-intro">Happy Hacking PORTFOLIOOOOOO!</h1>
+      <div style={{ height: "1000px" }}>
+        {/* this is just to make the page scrollable */}
+      </div>
     </>
   );
 };
