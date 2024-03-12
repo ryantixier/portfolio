@@ -20,10 +20,6 @@
   border: ridge azure 3px;
 }
 
-.background-img.scrolled span {
-  background-position: left 0px bottom 50%; /* Adjust 50% as needed */
-}
-
 /* navigation menu logo */
 .nav-logo {
   background: url("./images/rocketRy.png") no-repeat center center;
