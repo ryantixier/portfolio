@@ -11,6 +11,9 @@ import IconButton from "@mui/material/IconButton";
 // MUI icons
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
+// animations
+import { motion } from "framer-motion";
+
 // LOCAL...
 // LOCAL...
 
@@ -45,13 +48,28 @@ export const Header = () => {
 
   return (
     <>
-      <div className="header-container">
-        <div className="header-planet" />
+      <div className="header-container hide-overflow">
+        <motion.div
+          className="header-planet"
+          initial={{ opacity: 0, x: 100, y: 100, rotate: 5 }}
+          animate={{ opacity: 1, x: 0, y: 0, rotate: 0 }}
+          transition={{ duration: 2 }}
+        />
         <div className="header-textbox">
-          <h1>Welcome to the Portfolio of Ryan Tixier:</h1>
-          <h3>
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ type: "spring", duration: 2, delay: 0.5 }}
+          >
+            Welcome to the Portfolio of Ryan Tixier:
+          </motion.h1>
+          <motion.h3
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ type: "spring", duration: 2.5, delay: 0.75 }}
+          >
             Full-stack web developer, space nerd, and all around lovable rascal.
-          </h3>
+          </motion.h3>
           <br />
           <IconButton
             onClick={scrollToPageTitle}

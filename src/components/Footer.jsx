@@ -51,7 +51,7 @@ export const Footer = () => {
       const position = window.scrollY;
 
       // Trigger animation when the user scrolls down
-      if (position > 0) {
+      if (position > 100) {
         setYPosition("41%");
         setXPosition("-47px");
       } else {

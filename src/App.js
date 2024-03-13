@@ -28,9 +28,9 @@ function App() {
     <>
       <ReactSparkle
         color="white"
-        count={25}
+        count={39}
         minSize={7}
-        maxSize={12}
+        maxSize={13}
         overflowPx={0}
         fadeOutSpeed={0.5}
         flicker={false}

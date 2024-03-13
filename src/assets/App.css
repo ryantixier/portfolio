@@ -85,6 +85,10 @@
 /* UTILITIES */
 /* UTILITIES */
 
+.hide-overflow {
+  overflow-x: hidden;
+}
+
 .increase-z {
   position: relative;
   z-index: 10;

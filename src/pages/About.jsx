@@ -51,7 +51,7 @@ export const About = () => {
   return (
     <>
       <div>
-        <div className="page-intro increase-z">
+        <div className="page-intro hide-overflow">
           <h1 data-aos="fade-right" data-aos-duration="700">
             Greetings, Earthling!
           </h1>
