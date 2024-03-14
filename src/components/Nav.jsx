@@ -42,8 +42,8 @@ import Zoom from "@mui/material/Zoom";
 import emailjs from "@emailjs/browser";
 
 // routing information
-const pages = ["About", "Portfolio", "Resume", "Contact"];
-const paths = ["/", "/portfolio", "/resume"];
+const pages = ["About", "Projects", "Resume", "Contact"];
+const paths = ["/", "/projects", "/resume"];
 
 // styles
 

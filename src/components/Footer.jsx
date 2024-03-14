@@ -66,8 +66,8 @@ export const Footer = () => {
     case "/":
       displayText = "About";
       break;
-    case "/portfolio":
-      displayText = "Portfolio";
+    case "/projects":
+      displayText = "Projects";
       break;
     case "/resume":
       displayText = "Resume";

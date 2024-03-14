@@ -12,7 +12,7 @@ import "./assets/imageSource.css";
 
 // ...pages
 import About from "./pages/About";
-import Portfolio from "./pages/Portfolio";
+import Projects from "./pages/Projects";
 import Resume from "./pages/Resume";
 
 // ... comps
@@ -40,7 +40,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<About />} />
-          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/resume" element={<Resume />} />
         </Routes>
         <br />
