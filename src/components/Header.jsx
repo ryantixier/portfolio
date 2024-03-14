@@ -51,8 +51,8 @@ export const Header = () => {
       <div className="header-container hide-overflow">
         <motion.div
           className="header-planet"
-          initial={{ opacity: 0, x: 100, y: 100, rotate: 5 }}
-          animate={{ opacity: 1, x: 0, y: 0, rotate: 0 }}
+          initial={{ opacity: 0, x: 150, y: 100, rotate: 5, scale: 1.3 }}
+          animate={{ opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }}
           transition={{ duration: 2 }}
         />
         <div className="header-textbox">
@@ -71,13 +71,19 @@ export const Header = () => {
             Full-stack web developer, space nerd, and all around lovable rascal.
           </motion.h3>
           <br />
-          <IconButton
-            onClick={scrollToPageTitle}
-            color="inherit"
-            sx={iconButtonStyle}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ type: "spring", delay: 2.5, duration: 1 }}
           >
-            <ArrowDownwardIcon fontSize="large" color="inherit" />
-          </IconButton>
+            <IconButton
+              onClick={scrollToPageTitle}
+              color="inherit"
+              sx={iconButtonStyle}
+            >
+              <ArrowDownwardIcon fontSize="large" color="inherit" />
+            </IconButton>
+          </motion.div>
           <br />
         </div>
       </div>
