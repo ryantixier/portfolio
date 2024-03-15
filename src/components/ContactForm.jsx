@@ -35,6 +35,11 @@ export const ContactForm = () => {
   return (
     <>
       <h3>Contact</h3>
+      <p>
+        For a quote on developing a website for your business or any other
+        inquiries, please fill out the form below - Ryan will reply via email
+        within 48 hours.
+      </p>
       <div>
         <TextField
           name="name"

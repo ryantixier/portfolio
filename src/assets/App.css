@@ -15,7 +15,6 @@
 
 html,
 body {
-  /* min-height: 100vh; */
   background-color: black;
 }
 
@@ -143,4 +142,59 @@ body {
   margin: 2%;
   padding: 2%;
   border-left: #f0ffff 2px solid;
+}
+
+.section-content ul {
+  list-style-type: circle;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* PROJECTS */
+/* PROJECTS */
+
+/* RESUME */
+/* RESUME */
+.resume-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  margin: 2%;
+  /*  */
+  background-color: blue;
+  height: 100vh;
+  width: auto;
+}
+
+/* MEDIA QUERY - SMALL SCREEN */
+/* MEDIA QUERY - SMALL SCREEN */
+/* MEDIA QUERY - SMALL SCREEN */
+/* MEDIA QUERY - SMALL SCREEN */
+/* MEDIA QUERY - SMALL SCREEN */
+
+@media screen and (max-width: 768px) {
+  .section-container {
+    margin: 0%;
+    padding: 0%;
+    margin-top: 5%;
+    padding-top: 5%;
+  }
+
+  .section-title {
+    margin: 0%;
+    padding: 0%;
+    margin-right: 2%;
+    margin-left: 0%;
+    padding-right: 2%;
+  }
+
+  .section-content {
+    margin: 0%;
+    padding: 0%;
+    margin-top: 2%;
+    padding-right: 5%;
+    padding-left: 3%;
+  }
 }

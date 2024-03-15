@@ -25,6 +25,8 @@ import "aos/dist/aos.css";
 
 // ... MUI components
 import IconButton from "@mui/material/IconButton";
+
+// ... MUI icons
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 // INLINE...
@@ -55,7 +57,7 @@ const valedictionStyle = {
 
 export const About = () => {
   useEffect(() => {
-    AOS.init({ once: true });
+    AOS.init({ once: false });
   }, []);
 
   //Hooks
@@ -107,7 +109,7 @@ export const About = () => {
             Full-stack developer and lovable nerd...
           </h3>
           <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-            Ryan is a Full-stack web developer who specializes in creating
+            Ryan is a full-stack web developer who specializes in creating
             front-end sites for small businesses.
           </p>
           <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
@@ -128,7 +130,7 @@ export const About = () => {
       <div className="section-container">
         <div className="section-title">
           <h2 data-aos="fade-up" data-aos-duration="800">
-            About the Portfolio
+            About this Portfolio
           </h2>
         </div>
         <div
@@ -138,7 +140,7 @@ export const About = () => {
           data-aod-delay="100"
         >
           <h3 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-            How the site is broken down...
+            Site breakdown...
           </h3>
           <ul>
             <li
@@ -150,8 +152,10 @@ export const About = () => {
                 <i>About</i>
               </h3>
               <div>
-                The current page! Find out a little more about Ryan and more
-                about general site information here.
+                <p>
+                  (Current page) Provides details about Ryan as well as general
+                  site information.
+                </p>
               </div>
             </li>
             <li
@@ -163,9 +167,11 @@ export const About = () => {
                 <i>Projects</i>
               </h3>
               <div>
-                Presents Ryan's work on the web; check out the projects that
-                Ryan has worked on developing, from the start of his bootcamp
-                until now.
+                <p>
+                  Presents Ryan's work on the web; check out the projects that
+                  Ryan has worked on developing, from the start of his bootcamp
+                  until now.
+                </p>
               </div>
             </li>
             <li
@@ -177,8 +183,10 @@ export const About = () => {
                 <i>Resume</i>
               </h3>
               <div>
-                Offers the option to download a PDF of Ryan's resume, and
-                displays an ever-growing list of his skills and proficiencies.
+                <p>
+                  Offers the option to download a PDF of Ryan's resume, and
+                  records an ever-growing list of his skills and proficiencies.
+                </p>
               </div>
             </li>
             <li
@@ -190,8 +198,10 @@ export const About = () => {
                 <i>Contact</i>
               </h3>
               <div>
-                Displays a form where you can get send a message to Ryan
-                directly.
+                <p>
+                  Displays a form where you can get send a message to Ryan
+                  directly.
+                </p>
               </div>
             </li>
           </ul>
@@ -203,7 +213,7 @@ export const About = () => {
       <br />
       <div style={valedictionStyle}>
         <h1 data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
-          Explore Away...
+          Explore away...
         </h1>
       </div>
     </>

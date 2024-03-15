@@ -42,7 +42,7 @@ import Zoom from "@mui/material/Zoom";
 import emailjs from "@emailjs/browser";
 
 // routing information
-const pages = ["About", "Projects", "Resume", "Contact"];
+const pages = ["About", "Projects", "Resume/Skills", "Contact"];
 const paths = ["/", "/projects", "/resume"];
 
 // styles
@@ -166,7 +166,7 @@ export const Nav = (props) => {
     const pageTitleElement = document.getElementById("pageTitle");
     if (pageTitleElement) {
       setTimeout(() => {
-        pageTitleElement.scrollIntoView({ behavior: "smooth" });
+        pageTitleElement.scrollIntoView({ behavior: "instant" });
       }, 100);
       //setTImeout function is used to allow the page to render the pageTitle element before scrolling to it; troubleshoots issue where the page would not scroll to the pageTitle element fully
     }
