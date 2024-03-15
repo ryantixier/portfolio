@@ -48,6 +48,17 @@
   width: 370px;
   height: 370px;
   position: relative;
-  background-color: #000000;
+  background-color: transparent;
   border-radius: 50% 50% 50% 50%;
+}
+
+/* resume */
+.resume-img {
+  background: url("../assets/images/myResume.png") no-repeat center center;
+  background-size: cover;
+  width: 300px;
+  min-height: 400px;
+  margin-top: 3% auto;
+  border: 1px solid #000000af;
+  border-radius: 1% 1% 0% 0%;
 }

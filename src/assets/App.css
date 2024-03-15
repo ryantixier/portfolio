@@ -7,10 +7,8 @@
 /* GENERAL/GLOBAL */
 /* GENERAL/GLOBAL */
 
-/* applies google font to whole app */
 * {
-  font-family: "Space Grotesk", "Courier New", Courier, monospace !important;
-  /* color: aliceblue; */
+  font-family: "Space Grotesk", "Courier New", Courier, monospace !important; /* applies google font to whole site */
 }
 
 html,
@@ -117,6 +115,7 @@ body {
 .section-container {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   margin: 2%;
   padding: 5%;
   min-height: 75vh;
@@ -141,6 +140,8 @@ body {
   flex-direction: column;
   margin: 2%;
   padding: 2%;
+  min-width: 40%;
+  max-width: 50%;
   border-left: #f0ffff 2px solid;
 }
 
@@ -161,11 +162,39 @@ body {
   justify-content: center;
   align-items: center;
   padding: 5%;
-  margin: 2%;
-  /*  */
-  background-color: blue;
+  margin: 2% auto;
   height: 100vh;
   width: auto;
+}
+
+.resume-section1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+  min-width: 35%;
+  height: 500px;
+}
+
+.resume-section2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1%;
+  padding-left: 5%;
+  min-width: 40%;
+  max-width: 50%;
+  height: auto;
+  border-left: #f0ffff 2px solid;
+}
+
+.resume-section2 h2 {
+  margin-bottom: 0%;
+  padding-left: 2%;
+  border-left: #f0ffff 2px solid;
 }
 
 /* MEDIA QUERY - SMALL SCREEN */
@@ -196,5 +225,15 @@ body {
     margin-top: 2%;
     padding-right: 5%;
     padding-left: 3%;
+  }
+
+  /* resume */
+  .resume-section1 {
+    min-width: 100%;
+  }
+
+  .resume-section2 {
+    min-width: 100%;
+    border-left: transparent;
   }
 }
