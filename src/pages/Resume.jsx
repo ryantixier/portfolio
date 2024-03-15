@@ -17,7 +17,7 @@ import "../assets/imageSource.css";
 import PageHeader from "../components/PageHeader";
 
 // ... files
-import resume from "../assets/RT_resume-portfolio.pdf";
+import resumeCopy from "../assets/RT_resume-portfolio.pdf";
 
 // EXTERNAL ...
 // EXTERNAL ...
@@ -93,7 +93,7 @@ export const Resume = () => {
             data-aos-delay="100"
           />
           <IconButton
-            href={resume}
+            href={resumeCopy}
             download="RT-Resume"
             data-aos="fade-right"
             data-aos-duration="1000"
