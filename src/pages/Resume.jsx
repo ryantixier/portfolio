@@ -16,6 +16,9 @@ import "../assets/imageSource.css";
 // ... components
 import PageHeader from "../components/PageHeader";
 
+// ... files
+import resume from "../assets/RT_resume-portfolio.pdf";
+
 // EXTERNAL ...
 // EXTERNAL ...
 
@@ -34,16 +37,6 @@ import FileDownloadIcon from "@mui/icons-material/FileDownload";
 // INLINE...
 
 // ... content
-const pageHeaderContent = {
-  intro: "Resume & Skills",
-  subIntro:
-    "See below for my downloadable resume and a list of my proficiencies.",
-};
-
-const indentCode = {
-  paddingLeft: "20px",
-};
-
 const contentStrings = {
   languages: "JavaScript, HTML, CSS",
   frontEnd: "ReactJS, Angular",
@@ -53,14 +46,24 @@ const contentStrings = {
   other: "“Agile Software Development”, “Git”, “Heroku”, “GitHub Pages”",
 };
 
-// ... styles
-const iconButtonStyle = { width: "100%", justifyContent: "center" };
+const pageHeaderContent = {
+  intro: "Resume & Skills",
+  subIntro:
+    "See below for my downloadable resume and a list of my proficiencies.",
+};
 
+// ... styles
 const chipStyle = {
   color: "white",
   backgroundColor: "#f0ffff40",
   marginTop: "-3px",
   width: "300px",
+};
+
+const iconButtonStyle = { width: "100%", justifyContent: "center" };
+
+const indentCode = {
+  paddingLeft: "20px",
 };
 
 export const Resume = () => {
@@ -90,7 +93,8 @@ export const Resume = () => {
             data-aos-delay="100"
           />
           <IconButton
-            variant="outlined"
+            href={resume}
+            download="RT-Resume"
             data-aos="fade-right"
             data-aos-duration="1000"
             data-aos-delay="200"
@@ -136,7 +140,7 @@ export const Resume = () => {
             <b>
               <i>
                 For more information and examples about Ryan's work, please
-                visit the portfolio's "Projects" page.
+                visit the "Projects" page.
               </i>
             </b>
           </p>
