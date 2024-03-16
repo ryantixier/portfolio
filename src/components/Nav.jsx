@@ -87,7 +87,7 @@ const NavButton = styled(Button)(() => ({
   borderRadius: 0,
   "&:hover": {
     color: "#355571",
-    backgroundColor: "#00000060",
+    backgroundColor: "#00000040",
     fontWeight: "bolder",
     textShadow: "0px 0px 1px #ffffff80",
   },

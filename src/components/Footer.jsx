@@ -64,7 +64,7 @@ const iconStyle = {
   marginBottom: "1%",
   "&:hover": {
     fontWeight: "bolder",
-    backgroundColor: "#35557180",
+    backgroundColor: "#35557140",
     transition: "0.3s",
   },
 };
