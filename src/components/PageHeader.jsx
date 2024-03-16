@@ -60,15 +60,23 @@ export const PageHeader = (props) => {
   return (
     <>
       <div className="page-intro hide-overflow">
-        <h1 data-aos="fade-right" data-aos-duration="700">
+        <h1
+          className="hide-overflow"
+          data-aos="fade-right"
+          data-aos-duration="700"
+        >
           {props.intro}
         </h1>
-        <h4 data-aos="fade-left" data-aos-duration="1200">
+        <h4
+          className="hide-overflow"
+          data-aos="fade-left"
+          data-aos-duration="1200"
+        >
           {props.subIntro}
         </h4>
         <br />
         <div
-          className="increase-z"
+          className="increase-z hide-overflow"
           data-aos="zoom-in"
           data-aos-duration="1000"
           data-aos-delay="800"

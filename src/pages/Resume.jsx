@@ -58,6 +58,8 @@ const chipStyle = {
   backgroundColor: "#f0ffff40",
   marginTop: "-3px",
   width: "300px",
+  border: "1px solid #87b7c2",
+  boxShadow: "0px 0px 10px 0px #ffffff",
 };
 
 const iconButtonStyle = { width: "100%", justifyContent: "center" };
@@ -84,56 +86,19 @@ export const Resume = () => {
 
       {/* PAGE CONTENT BELOW */}
 
-      <div className="resume-container">
-        <div className="resume-section1">
-          <div
-            className="resume-img"
-            data-aos="fade-right"
-            data-aos-duration="1000"
-            data-aos-delay="100"
-          />
-          <IconButton
-            href={resumeCopy}
-            download="RT-Resume"
-            data-aos="fade-right"
-            data-aos-duration="1000"
-            data-aos-delay="200"
-            sx={iconButtonStyle}
-          >
-            <Chip
-              icon={<FileDownloadIcon color="white" />}
-              label="Download Resume"
-              sx={chipStyle}
-            />
-          </IconButton>
-        </div>
+      <div className="resume-container hide-overflow">
         <div className="resume-section2">
-          <h2
-            className="hide-overflow"
-            data-aos="fade-left"
-            data-aos-duration="700"
-          >
+          <h2 data-aos="fade-left" data-aos-duration="700">
             Skills and Proficiencies
           </h2>
-          <h3
-            className="hide-overflow"
-            data-aos="fade-left"
-            data-aos-duration="700"
-            data-aos-delay="135"
-          >
-            Ryan is a full-stack developer, though he specializes in front-end
-            development. He works primarily within the React.js library and has
-            worked with small businesses to grow their online presence.
+          <h3 data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
+            Ryan is a full-stack web developer who specializes in front-end
+            development. He takes pride in working with small businesses to grow
+            their online presence.
           </h3>
-          <p
-            className="hide-overflow"
-            data-aos="fade-left"
-            data-aos-duration="700"
-            data-aos-delay="175"
-          >
+          <p data-aos="fade-left" data-aos-duration="700" data-aos-delay="150">
             <i>
-              For more information and examples about Ryan's work, please visit
-              the "Projects" page.
+              For examples of Ryan's work, please visit the "Projects" page.
             </i>
           </p>
           <br />
@@ -152,7 +117,7 @@ export const Resume = () => {
           >
             <b>
               <i>let</i> webDevelopmentSkills
-            </b>{" "}
+            </b>
             = &#123;
           </code>
           <code
@@ -202,6 +167,35 @@ export const Resume = () => {
           >
             &#125;
           </code>
+        </div>
+        <div className="resume-section1">
+          <h3
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+          >
+            Ryan Tixier's Resume:
+          </h3>
+          <div
+            className="resume-img "
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+          />
+          <IconButton
+            href={resumeCopy}
+            download="RT-Resume"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+            sx={iconButtonStyle}
+          >
+            <Chip
+              icon={<FileDownloadIcon color="white" />}
+              label="Download Resume"
+              sx={chipStyle}
+            />
+          </IconButton>
         </div>
       </div>
     </>

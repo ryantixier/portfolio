@@ -60,31 +60,45 @@ const theme = createTheme({
   },
 });
 
-const ColorButton = styled(Button)(({ theme }) => ({
-  color: theme.palette.primary.contrastText,
+const ColorButton = styled(Button)(() => ({
+  color: "#f0f8ff",
   backgroundColor: "#000000",
-  borderColor: theme.palette.success.contrastText,
+  borderColor: "#f0f8ff",
   "&:hover": {
     color: "#000000",
-    backgroundColor: theme.palette.primary.contrastText,
+    backgroundColor: "#f0f8ff",
     borderColor: "#000000",
   },
 }));
 
 // font declaration, used for nav links ("NavButton")
-const font = "Space Grotesk";
+// const font = "Space Grotesk";
 
 // styling for nav links
+const addGradient = {
+  background: "linear-gradient(0deg, #939d9e 0%,white 90%)",
+};
+
 const NavButton = styled(Button)(() => ({
-  fontFamily: font,
+  // fontFamily: font,
+  color: "#000000",
+  width: "100%",
+  borderLeft: "1px solid #00000060",
+  borderRadius: 0,
+  "&:hover": {
+    color: "#355571",
+    backgroundColor: "#00000060",
+    fontWeight: "bolder",
+    textShadow: "0px 0px 1px #ffffff80",
+  },
 }));
 
 // ... modal style for small media queries
 const modalStyleSm = {
-  width: "85%",
+  width: "90%",
   position: "absolute",
-  top: "calc(50% - 42.5%)", // 42.5% = 85% / 2
-  left: "calc(50% - 42.5%)", //  42.5% = 85% / 2
+  top: "calc(50% - 45%)", // 45% = 90% / 2
+  left: "calc(50% - 45%)", // 45% = 90% / 2
   bgcolor: "#FFFFFF",
   border: "2px solid #f0f8ff",
   boxShadow: 24,
@@ -172,6 +186,13 @@ export const Nav = (props) => {
     }
   };
 
+  const scrollToHeader = () => {
+    const headerElement = document.getElementById("header");
+    if (headerElement) {
+      headerElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   const handleOpenDrawer = () => {
     setOpenDrawer(true);
   };
@@ -197,10 +218,11 @@ export const Nav = (props) => {
 
   return (
     <>
+      <div id="header" />
       <CssBaseline />
       <HideOnScroll {...props}>
         <AppBar theme={theme}>
-          <Container maxWidth="xl">
+          <Container maxWidth="xl" sx={addGradient}>
             <Toolbar disableGutters>
               {/* SM-MD DEVICE WIDTH */}
               {/* SM-MD DEVICE WIDTH */}
@@ -210,7 +232,7 @@ export const Nav = (props) => {
                 noWrap
                 component={Link}
                 to={paths[0]}
-                onClick={scrollToPageTitle}
+                onClick={scrollToHeader}
                 sx={{
                   mr: 2,
                   display: { xs: "none", md: "flex" },
@@ -338,7 +360,7 @@ export const Nav = (props) => {
                 noWrap
                 component={Link}
                 to="/"
-                onClick={scrollToPageTitle}
+                onClick={scrollToHeader}
                 sx={{
                   ml: -5,
                   display: { xs: "flex", md: "none" },
@@ -368,7 +390,7 @@ export const Nav = (props) => {
                   to={paths[0]}
                   value={pages[0]}
                   onClick={scrollToPageTitle}
-                  color="inherit"
+                  // color="inherit"
                 >
                   {pages[0]}
                 </NavButton>
@@ -379,7 +401,7 @@ export const Nav = (props) => {
                   to={paths[1]}
                   value={pages[1]}
                   onClick={scrollToPageTitle}
-                  color="inherit"
+                  // color="inherit"
                 >
                   {pages[1]}
                 </NavButton>
@@ -390,7 +412,7 @@ export const Nav = (props) => {
                   to={paths[2]}
                   value={pages[2]}
                   onClick={scrollToPageTitle}
-                  color="inherit"
+                  // color="inherit"
                 >
                   {pages[2]}
                 </NavButton>
@@ -400,6 +422,8 @@ export const Nav = (props) => {
                   component="a"
                   onClick={handleOpenModal}
                   color="inherit"
+                  sx={(NavButton, { borderRight: "1px solid #00000060" })}
+                  // maintains NavButton styling while adding border-right
                 >
                   {pages[3]}
                 </NavButton>

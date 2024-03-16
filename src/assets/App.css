@@ -64,7 +64,7 @@ body {
   padding: 5% 20% 20%;
   text-align: center;
   color: #f0ffff;
-  text-shadow: 1px 2px black;
+  text-shadow: 1px 2px #000000;
 }
 
 #pageTitle {
@@ -78,10 +78,12 @@ body {
 
 .footer-name {
   margin: auto;
+  margin-right: 0;
+  margin-left: 0;
   position: relative;
   font-size: x-large;
   text-align: center;
-  width: 55%;
+  width: 50%;
 }
 
 /* UTILITIES */
@@ -89,7 +91,7 @@ body {
 /* UTILITIES */
 
 .hide-overflow {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .increase-z {
@@ -163,8 +165,8 @@ body {
   align-items: center;
   padding: 5%;
   margin: 2% auto;
-  height: 100vh;
-  width: auto;
+  min-height: 75vh;
+  width: 100%;
 }
 
 .resume-section1 {
@@ -172,6 +174,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 3%;
   padding: 5%;
   min-width: 35%;
   height: 500px;
@@ -183,12 +186,13 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  margin-top: 3%;
   padding: 1%;
-  padding-left: 5%;
+  padding-right: 5%;
   min-width: 40%;
   max-width: 50%;
   height: auto;
-  border-left: #f0ffff 2px solid;
+  border-right: #f0ffff 2px solid;
 }
 
 .resume-section2 h2 {
@@ -203,7 +207,7 @@ body {
 /* MEDIA QUERY - SMALL SCREEN */
 /* MEDIA QUERY - SMALL SCREEN */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 877px) {
   .section-container {
     margin: 0%;
     padding: 0%;
@@ -234,6 +238,7 @@ body {
 
   .resume-section2 {
     min-width: 100%;
-    border-left: transparent;
+    border-right: transparent;
+    padding: 8%;
   }
 }
