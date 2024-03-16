@@ -60,9 +60,17 @@ const chipStyle = {
   width: "300px",
   border: "1px solid #87b7c2",
   boxShadow: "0px 0px 10px 0px #ffffff",
+  "&:hover": {
+    boxShadow: "0px 0px 20px 0px #ffffff",
+  },
 };
 
-const iconButtonStyle = { width: "100%", justifyContent: "center" };
+const iconButtonStyle = {
+  width: "100%",
+  justifyContent: "center",
+  position: "relative",
+  zIndex: 10,
+};
 
 const indentCode = {
   paddingLeft: "20px",
@@ -177,7 +185,7 @@ export const Resume = () => {
             Ryan Tixier's Resume:
           </h3>
           <div
-            className="resume-img "
+            className="resume-img"
             data-aos="fade-right"
             data-aos-duration="1000"
             data-aos-delay="100"
