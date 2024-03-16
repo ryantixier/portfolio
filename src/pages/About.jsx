@@ -109,8 +109,8 @@ export const About = () => {
             Full-stack developer and lovable nerd...
           </h3>
           <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-            Ryan is a full-stack web developer who specializes in creating
-            front-end sites for small businesses.
+            Ryan is a Freelance full-stack Web Developer who specializes in
+            creating front-end sites for small businesses.
           </p>
           <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
             If you are looking to build your business's online presence, Ryan is
