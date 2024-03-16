@@ -107,17 +107,11 @@ export const Resume = () => {
             />
           </IconButton>
         </div>
-        <div
-          className="resume-section2 hide-overflow"
-          data-aos="fade-right"
-          data-aos-duration="700"
-          data-aos-delay="100"
-        >
+        <div className="resume-section2">
           <h2
             className="hide-overflow"
-            data-aos="fade-right"
+            data-aos="fade-left"
             data-aos-duration="700"
-            data-aos-delay="100"
           >
             Skills and Proficiencies
           </h2>
@@ -125,7 +119,7 @@ export const Resume = () => {
             className="hide-overflow"
             data-aos="fade-left"
             data-aos-duration="700"
-            data-aos-delay="130"
+            data-aos-delay="135"
           >
             Ryan is a full-stack developer, though he specializes in front-end
             development. He works primarily within the React.js library and has
@@ -137,12 +131,10 @@ export const Resume = () => {
             data-aos-duration="700"
             data-aos-delay="175"
           >
-            <b>
-              <i>
-                For more information and examples about Ryan's work, please
-                visit the "Projects" page.
-              </i>
-            </b>
+            <i>
+              For more information and examples about Ryan's work, please visit
+              the "Projects" page.
+            </i>
           </p>
           <br />
           <code
@@ -150,7 +142,7 @@ export const Resume = () => {
             data-aos-duration="1000"
             data-aos-delay="200"
           >
-            <b>For Devs - below are my proficiencies:</b>
+            <b>For Devs -</b> below are Ryan's proficiencies:
           </code>
           <br />
           <code
