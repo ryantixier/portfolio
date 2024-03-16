@@ -189,6 +189,7 @@ export const Resume = () => {
             data-aos="fade-right"
             data-aos-duration="1000"
             data-aos-delay="100"
+            data-aos-once="true"
           />
           <IconButton
             href={resumeCopy}
@@ -196,6 +197,7 @@ export const Resume = () => {
             data-aos="fade-right"
             data-aos-duration="1000"
             data-aos-delay="200"
+            data-aos-once="true"
             sx={iconButtonStyle}
           >
             <Chip
