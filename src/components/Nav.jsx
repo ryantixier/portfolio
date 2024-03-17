@@ -76,7 +76,8 @@ const ColorButton = styled(Button)(() => ({
 
 // styling for nav links
 const addGradient = {
-  background: "linear-gradient(0deg, #939d9e 0%,white 90%)",
+  background: "linear-gradient(0deg, #939d9e 10%,white 100%)",
+  borderBottom: "2px outset #000000",
 };
 
 const NavButton = styled(Button)(() => ({
@@ -267,6 +268,7 @@ export const Nav = (props) => {
                   role="presentation"
                   onClick={handleCloseDrawer}
                   onKeyDown={handleCloseDrawer}
+                  sx={addGradient}
                 >
                   <List value={navigation} onChange={handleNavigation}>
                     {/* ABOUT */}

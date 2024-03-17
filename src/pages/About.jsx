@@ -24,10 +24,14 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 // ... MUI components
-import IconButton from "@mui/material/IconButton";
+
+// REMOVED IN ATTEMPT TO SIMPLIFY LAYOUT
+// import IconButton from "@mui/material/IconButton";
 
 // ... MUI icons
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+
+// REMOVED IN ATTEMPT TO SIMPLIFY LAYOUT
+// import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 // INLINE...
 // INLINE...
@@ -39,15 +43,17 @@ const pageHeaderContent = {
 };
 
 // ... styles
-const iconButtonStyle = {
-  zIndex: 10,
-  color: "white",
-  background: "#e0e0e080",
-  "&:hover": {
-    color: "black",
-    background: "#e0e0e0",
-  },
-};
+
+// REMOVED IN ATTEMPT TO SIMPLIFY LAYOUT
+// const iconButtonStyle = {
+//   zIndex: 10,
+//   color: "white",
+//   background: "#e0e0e080",
+//   "&:hover": {
+//     color: "black",
+//     background: "#e0e0e0",
+//   },
+// };
 
 const valedictionStyle = {
   display: "flex",
@@ -63,12 +69,14 @@ export const About = () => {
   //Hooks
 
   //Functions
-  const scrollToSection2 = () => {
-    const pageContentElement = document.getElementById("section2");
-    if (pageContentElement) {
-      pageContentElement.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+
+  // REMOVED IN ATTEMPT TO SIMPLIFY LAYOUT
+  // const scrollToSection2 = () => {
+  //   const pageContentElement = document.getElementById("section2");
+  //   if (pageContentElement) {
+  //     pageContentElement.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
 
   return (
     <>
@@ -84,20 +92,6 @@ export const About = () => {
           <h2 data-aos="fade-up" data-aos-duration="800">
             About Ryan
           </h2>
-          <div
-            className="increase-z"
-            data-aos="zoom-in"
-            data-aos-duration="1000"
-            data-aos-delay="800"
-          >
-            <IconButton
-              onClick={scrollToSection2}
-              color="inherit"
-              sx={iconButtonStyle}
-            >
-              <ArrowDownwardIcon fontSize="large" color="inherit" />
-            </IconButton>
-          </div>
         </div>
         <div
           className="section-content hide-overflow"
@@ -105,16 +99,27 @@ export const About = () => {
           data-aos-duration="700"
           data-aod-delay="100"
         >
-          <h3 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-            Full-stack developer and lovable nerd...
+          <h3 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            Full-stack web developer and lovable nerd...
           </h3>
+          <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+            Ryan is an ex-professional in the realms of Mental Healthcare and
+            Education (~10 years).
+          </p>
           <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-            Ryan is a Freelance full-stack Web Developer who specializes in
-            creating front-end sites for small businesses.
+            Although he loved working in these fields, he recently decided to
+            make a career change; he attended a Coding Bootcamp through the
+            University of Denver in order to become a Web Developer.
           </p>
           <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-            If you are looking to build your business's online presence, Ryan is
-            eager to help you get started!
+            These days, Ryan works as a Freelance full-stack Web Developer who
+            specializes in creating front-end sites for small businesses.
+          </p>
+          <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+            <b>
+              If you are looking to build your business's online presence, Ryan
+              is eager to help you get started!
+            </b>
           </p>
           {/* <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
             Click the "Contact" section in the navigation menu and submit the
@@ -127,7 +132,7 @@ export const About = () => {
       <div id="section2" />
       <br />
 
-      <div className="section-container">
+      <div className="section-container hide-overflow">
         <div className="section-title">
           <h2 data-aos="fade-up" data-aos-duration="800">
             About this Portfolio
@@ -169,7 +174,7 @@ export const About = () => {
               <div>
                 <p>
                   Presents Ryan's work on the web; check out the projects that
-                  Ryan has worked on developing, from the start of his bootcamp
+                  Ryan has worked on developing, from the start of his boot camp
                   until now.
                 </p>
               </div>

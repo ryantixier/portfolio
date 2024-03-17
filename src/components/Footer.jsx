@@ -40,8 +40,8 @@ const backgroundImgStyle = {
 
 const bottNavStyle = {
   height: "85px",
-  borderTop: "2px inset #e0e0e0",
-  background: "linear-gradient( #939d9e 0%,white 90%)",
+  borderTop: "2px inset #000000",
+  background: "linear-gradient(180deg, #939d9e 0%,  #ffffff 100%)",
 };
 
 const footerBoxStyle = {
@@ -62,9 +62,10 @@ const iconStyle = {
   marginLeft: "4%",
   marginTop: "1%",
   marginBottom: "1%",
+
   "&:hover": {
     fontWeight: "bolder",
-    backgroundColor: "#35557140",
+    background: "#35557140",
     transition: "0.3s",
   },
 };
@@ -123,7 +124,7 @@ export const Footer = () => {
         </motion.div>
       </Box>
       <Box sx={footerBoxStyle}>
-        <BottomNavigation showLabels sx={bottNavStyle}>
+        <BottomNavigation sx={bottNavStyle}>
           <div className="footer-name">
             <Divider>Ryan Tixier</Divider>
           </div>
@@ -132,6 +133,7 @@ export const Footer = () => {
             href={LinkedIn}
             target="_blank"
             label="LinkedIn"
+            showLabel
             icon={<LinkedInIcon />}
             sx={iconStyle}
           />
@@ -140,6 +142,7 @@ export const Footer = () => {
             href={GitHub}
             target="_blank"
             label="GitHub"
+            showLabel
             icon={<GitHubIcon />}
             sx={iconStyle}
           />

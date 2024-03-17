@@ -48,8 +48,7 @@ const contentStrings = {
 
 const pageHeaderContent = {
   intro: "Resume & Skills",
-  subIntro:
-    "See below for my downloadable resume and a list of my proficiencies.",
+  subIntro: "Ryan's dev skills & resume download.",
 };
 
 // ... styles
@@ -84,6 +83,10 @@ export const Resume = () => {
   //Hooks
 
   //Functions
+
+  document.addEventListener("aos:in:testing123", ({ detail }) => {
+    console.log("animated out", detail);
+  });
 
   return (
     <>
@@ -197,6 +200,7 @@ export const Resume = () => {
             data-aos-duration="1000"
             data-aos-delay="200"
             sx={iconButtonStyle}
+            id="testing123"
           >
             <Chip
               icon={<FileDownloadIcon color="white" />}
