@@ -89,7 +89,7 @@ export const About = () => {
 
       <div className="section-container">
         <div className="section-title">
-          <h2 data-aos="fade-up" data-aos-duration="800">
+          <h2 data-aos="fade-left" data-aos-duration="800">
             About Ryan
           </h2>
         </div>
@@ -134,7 +134,7 @@ export const About = () => {
 
       <div className="section-container hide-overflow">
         <div className="section-title">
-          <h2 data-aos="fade-up" data-aos-duration="800">
+          <h2 data-aos="fade-left" data-aos-duration="800">
             About this Portfolio
           </h2>
         </div>

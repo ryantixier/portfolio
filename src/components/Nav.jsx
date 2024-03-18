@@ -74,12 +74,15 @@ const ColorButton = styled(Button)(() => ({
 // font declaration, used for nav links ("NavButton")
 // const font = "Space Grotesk";
 
-// styling for nav links
 const addGradient = {
   background: "linear-gradient(0deg, #939d9e 10%,white 100%)",
   borderBottom: "2px outset #000000",
 };
 
+// styling for nav container
+const allTheWidth = { minWidth: "100vw" };
+
+// styling for nav links
 const NavButton = styled(Button)(() => ({
   // fontFamily: font,
   color: "#000000",
@@ -89,7 +92,7 @@ const NavButton = styled(Button)(() => ({
   "&:hover": {
     color: "#355571",
     backgroundColor: "#00000040",
-    fontWeight: "bolder",
+    fontWeight: "bold",
     textShadow: "0px 0px 1px #ffffff80",
   },
 }));
@@ -223,7 +226,7 @@ export const Nav = (props) => {
       <CssBaseline />
       <HideOnScroll {...props}>
         <AppBar theme={theme}>
-          <Container maxWidth="xl" sx={addGradient}>
+          <Container maxWidth="xl" sx={[addGradient, allTheWidth]}>
             <Toolbar disableGutters>
               {/* SM-MD DEVICE WIDTH */}
               {/* SM-MD DEVICE WIDTH */}
