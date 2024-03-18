@@ -54,13 +54,15 @@ const pageHeaderContent = {
 // ... styles
 const chipStyle = {
   color: "white",
-  backgroundColor: "#f0ffff40",
+  backgroundColor: "#35557140",
   marginTop: "-3px",
   width: "300px",
-  border: "1px solid #87b7c2",
-  boxShadow: "0px 0px 10px 0px #ffffff",
+  border: "#6094c140 2px solid",
+  boxShadow: "0px 0px 10px 2px #6094c140",
+  textShadow: "1px 2px #000000",
   "&:hover": {
-    boxShadow: "0px 0px 20px 0px #ffffff",
+    backgroundColor: "#35557180",
+    boxShadow: "0px 0px 20px 2px #6094c180",
   },
 };
 
@@ -200,7 +202,6 @@ export const Resume = () => {
             data-aos-duration="1000"
             data-aos-delay="200"
             sx={iconButtonStyle}
-            id="testing123"
           >
             <Chip
               icon={<FileDownloadIcon color="white" />}

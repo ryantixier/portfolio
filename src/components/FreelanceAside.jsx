@@ -26,13 +26,37 @@ import "../assets/imageSource.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// ... components
+// ... MUI components
+import Chip from "@mui/material/Chip";
+import IconButton from "@mui/material/IconButton";
+
+// ... MUI icons
+import LaunchIcon from "@mui/icons-material/Launch";
 
 // INLINE ...
 // INLINE ...
 // INLINE ...
 
 // ... styles
+const chipStyle = {
+  color: "white",
+  backgroundColor: "#35557120",
+  marginTop: "-3px",
+  width: "300px",
+  border: "#6094c140 2px solid",
+  boxShadow: "0px 0px 10px 0px #6094c140",
+  "&:hover": {
+    // backgroundColor: "#35557140",
+    boxShadow: "0px 0px 10px 0px #6094c180",
+  },
+};
+
+const iconButtonStyle = {
+  // width: "100%",
+  justifyContent: "center",
+  position: "relative",
+  zIndex: 10,
+};
 
 // ... content
 
@@ -57,9 +81,16 @@ export const FreelanceAside = (props) => {
             data-aos-duration="800"
             data-aos-delay="300"
           >
-            <a href={props.websiteUrl} target="_blank" rel="noreferrer">
+            <IconButton href={props.websiteUrl} sx={iconButtonStyle}>
+              <Chip
+                icon={<LaunchIcon color="white" fontSize="inherit" />}
+                label={props.websiteTitle}
+                sx={chipStyle}
+              />
+            </IconButton>
+            {/* <a href={props.websiteUrl} target="_blank" rel="noreferrer">
               Visit: {props.websiteTitle}
-            </a>
+            </a> */}
           </div>
         </div>
         <div className="freelance-content">

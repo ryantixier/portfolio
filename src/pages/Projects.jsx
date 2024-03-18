@@ -42,7 +42,7 @@ const tajInfo = {
   websiteTitle: "thetajsalon.com",
   image: tajScreenshot,
   alt: "The TAJ Salon Website",
-  description: `The TAJ Salon is a business based out of Lady Lake, Florida. The business owner solicited Ryan's services for the creation of the salon's website. He developed the a first draft of the site within two weeks, and published the site after one month. Click the button labeled "Visit: thetajsalon.com" to view.`,
+  description: `The TAJ Salon is a business based out of Lady Lake, Florida. The business owner solicited Ryan's services for the creation of the salon's website. He developed the a first draft of the site within two weeks, and published the site after one month. Click the link with the URL above to view.`,
   codeLanguages: "JavaScript, HTML, CSS",
   codeEnvironments: "Node.js",
   codeLibraries: "React.js",
@@ -53,8 +53,8 @@ const tajInfo = {
 
 const pscInfo = {
   name: "Playground Safety Consultants",
-  websiteTitle: "(Link available April 2024)",
-  websiteUrl: "(Link available April 2024)",
+  websiteTitle: "(N/A: Coming Soon)",
+  websiteUrl: "(N/A: Coming Soon)",
   image: pscScreenshot,
   alt: "Playground Safety Consultants Website",
   description:
@@ -93,7 +93,7 @@ export const Projects = () => {
 
       {/* freelance */}
       <div
-        className="projects-container hide-overflow"
+        className="projects-container hide-overflow increase-z"
         data-aos="fade-right"
         data-aos-duration="500"
       >

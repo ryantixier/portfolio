@@ -151,7 +151,7 @@ body {
   max-width: 70%;
   border-top: 1px solid #abd5ffc5;
   border-left: #abd5ffc5 1px solid;
-  background-color: #ffffff10;
+  background: linear-gradient(0deg, transparent 0%, #ffffff20 100%);
 }
 
 .section-content h3 {
@@ -211,7 +211,6 @@ body {
   min-width: 50%;
   max-width: 70%;
   border-left: #abd5ffc5 1px solid;
-  background-color: #ffffff10;
 }
 
 .projects-aside {
@@ -219,13 +218,14 @@ body {
   flex-direction: column;
   margin-bottom: 3%;
   /* border: #395858 2px solid; */
-  border-radius: 2%;
+  /* border-radius: 2%; */
+  background: linear-gradient(0deg, transparent 0%, #ffffff20 50%);
 }
 
 /* freelance */
 
 .freelance-title {
-  background: linear-gradient(0deg, transparent 0%, #ffffff10 100%);
+  background: linear-gradient(0deg, transparent 0%, #ffffff20 100%);
   /* padding-top: 3%; */
   padding-left: 2%;
   padding-bottom: 3%;
@@ -236,7 +236,7 @@ body {
   /* border-radius: 2%; */
 }
 
-.freelance-title a,
+/* .freelance-title a,
 .bootcamp-title a {
   text-decoration: none;
   color: #6094c1;
@@ -248,12 +248,12 @@ body {
   border-radius: 2%;
   background-color: #35557120;
   transition: box-shadow 0.2s ease-in-out;
-}
+} */
 
-.freelance-title a:hover,
+/* .freelance-title a:hover,
 .bootcamp-title a:hover {
   box-shadow: 0px 0px 10px 0px #6094c180;
-}
+} */
 
 .freelance-content {
   display: flex;
@@ -304,11 +304,19 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 5%;
-  margin: 2% auto;
+  padding-top: 0;
+  margin: auto;
+  /* margin: 2% auto; */
+  /* margin-top: 0; */
   min-height: 75vh;
-  width: 100%;
+  width: 90%;
+  background: linear-gradient(0deg, transparent 0%, #ffffff20 100%);
+  border-top: #abd5ffc5 1px solid;
+  border-left: #abd5ffc5 1px solid;
+
+  /* border-top: #abd5ffc5 1px solid; */
 }
 
 .resume-section1 {
@@ -316,10 +324,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 3%;
+  /* margin-top: 3%; */
   padding: 5%;
   min-width: 35%;
-  height: 500px;
 }
 
 .resume-section2 {
@@ -328,13 +335,12 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin-top: 3%;
-  padding: 1%;
-  padding-right: 5%;
+  /* margin-top: 3%; */
+  padding: 5%;
   min-width: 40%;
   max-width: 50%;
   height: auto;
-  border-right: #f0ffff 2px solid;
+  /* border-right: #abd5ffc5 1px solid; */
 }
 
 .resume-section2 h2 {
@@ -367,9 +373,8 @@ body {
     min-width: 100%;
     border-top: 1px solid #abd5ffc5;
     border-left: #abd5ffc5 1px solid;
-    background-color: #ffffff10;
     /* border-radius: 2%; */
-    background-color: #ffffff10;
+    background: linear-gradient(0deg, transparent 0%, #ffffff20 100%);
   }
 
   /* projects */
