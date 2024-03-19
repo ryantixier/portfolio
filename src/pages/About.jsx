@@ -204,8 +204,8 @@ export const About = () => {
               </h3>
               <div>
                 <p>
-                  Displays a form where you can get send a message to Ryan
-                  directly.
+                  Displays a form where you can send a message to Ryan directly;
+                  he will respond within 48 hours, 7 days a week.
                 </p>
               </div>
             </li>

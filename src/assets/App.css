@@ -236,25 +236,6 @@ body {
   /* border-radius: 2%; */
 }
 
-/* .freelance-title a,
-.bootcamp-title a {
-  text-decoration: none;
-  color: #6094c1;
-  margin-bottom: 0;
-  padding: 1%;
-  padding-left: 3%;
-  padding-right: 3%;
-  border: #6094c140 2px solid;
-  border-radius: 2%;
-  background-color: #35557120;
-  transition: box-shadow 0.2s ease-in-out;
-} */
-
-/* .freelance-title a:hover,
-.bootcamp-title a:hover {
-  box-shadow: 0px 0px 10px 0px #6094c180;
-} */
-
 .freelance-content {
   display: flex;
   flex-wrap: wrap;
@@ -262,6 +243,8 @@ body {
   padding-left: 0;
 }
 
+/* .freelance-image styling found in imageSource.css */
+/* .freelance-image styling found in imageSource.css */
 /* .freelance-image styling found in imageSource.css */
 
 .freelance-description {

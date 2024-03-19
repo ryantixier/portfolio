@@ -86,10 +86,6 @@ export const Resume = () => {
 
   //Functions
 
-  document.addEventListener("aos:in:testing123", ({ detail }) => {
-    console.log("animated out", detail);
-  });
-
   return (
     <>
       <PageHeader
@@ -163,7 +159,7 @@ export const Resume = () => {
             data-aos-duration="1000"
             data-aos-delay="600"
           >
-            <i>components</i>: &#91; {contentStrings.componentLibraries} &#93;,
+            <i>component</i>: &#91; {contentStrings.componentLibraries} &#93;,
           </code>
           <code
             style={indentCode}

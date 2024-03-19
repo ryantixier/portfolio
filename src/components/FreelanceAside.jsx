@@ -5,7 +5,7 @@
 // GENERAL
 // GENERAL
 import * as React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // LOCAL ...
 // LOCAL ...
 
@@ -62,11 +62,23 @@ const iconButtonStyle = {
 
 export const FreelanceAside = (props) => {
   //Hooks
+  const [urlPresent, setUrlPresent] = useState(true);
+
+  console.log(props.websiteUrl);
+
+  const disableLink = () => {
+    if (props.websiteUrl === undefined || props.websiteUrl === "") {
+      setUrlPresent(false);
+    } else {
+      setUrlPresent(true);
+    }
+  };
 
   //Functions
   useEffect(() => {
     AOS.init({ once: false });
-  }, []);
+    disableLink();
+  }, [props.websiteUrl]);
 
   return (
     <>
@@ -81,11 +93,27 @@ export const FreelanceAside = (props) => {
             data-aos-duration="800"
             data-aos-delay="300"
           >
-            <IconButton href={props.websiteUrl} sx={iconButtonStyle}>
+            <IconButton
+              href={props.websiteUrl}
+              disable={!urlPresent}
+              target="_blank"
+              rel="noreferrer"
+              sx={iconButtonStyle}
+            >
               <Chip
                 icon={<LaunchIcon color="white" fontSize="inherit" />}
                 label={props.websiteTitle}
-                sx={chipStyle}
+                sx={
+                  urlPresent
+                    ? chipStyle
+                    : {
+                        color: "white",
+                        backgroundColor: "#00000020",
+                        marginTop: "-3px",
+                        width: "300px",
+                        border: "#00000040 2px solid",
+                      }
+                }
               />
             </IconButton>
             {/* <a href={props.websiteUrl} target="_blank" rel="noreferrer">
@@ -135,7 +163,7 @@ export const FreelanceAside = (props) => {
               </li>
               <br />
               <li>
-                <b>Components:</b>
+                <b>Component Libraries:</b>
                 <br />
                 {props.codeComponents}
               </li>

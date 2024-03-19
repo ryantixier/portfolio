@@ -30,11 +30,16 @@ import "aos/dist/aos.css";
 
 // INLINE...
 
-// ... content
+// ... page content
 const pageHeaderContent = {
   intro: "Projects",
   subIntro: "Ryan's work on the web.",
 };
+
+// ... props content
+// ... props content
+
+// ... freelance
 
 const tajInfo = {
   name: "The TAJ Salon",
@@ -54,7 +59,7 @@ const tajInfo = {
 const pscInfo = {
   name: "Playground Safety Consultants",
   websiteTitle: "(N/A: Coming Soon)",
-  websiteUrl: "(N/A: Coming Soon)",
+  websiteUrl: "",
   image: pscScreenshot,
   alt: "Playground Safety Consultants Website",
   description:
@@ -66,6 +71,61 @@ const pscInfo = {
   codeWrite: "VS Code",
   codeHost: "GitHub Pages",
 };
+
+// ... bootcamp projects
+const workoutWizard = {
+  name: "Workout Wizard",
+  image: "",
+  intro: "Full-stack application for tracking workouts",
+  ghRepo: "",
+  url: "",
+};
+
+const codeGauntlet = {
+  name: "Code Gauntlet",
+  image: "",
+  intro: "Full-stack application for coding challenges",
+  ghRepo: "",
+  url: "",
+};
+
+// ... bootcamp front-end
+
+const frontEnd1 = {
+  intro: "Random Password Generator",
+  image: "",
+  description:
+    "This vanilla Javascript application generates a random password of custom length, using a mixture of uppercase and lowercase letters, special characters, and numbers. Options are based on the user's selection preferences.",
+  ghRepo: "",
+  url: "",
+};
+
+const frontEnd2 = {
+  intro: "Vanilla Javascript Code Quiz",
+  image: "",
+  description:
+    "A timed quiz that tests the user's JavaScript knowledge. Time is deducted for every incorrect answer until the timer expires, or once all questions are answered. The final score is is saved to local storage.",
+  ghRepo: "",
+  url: "",
+};
+
+const backEnd1 = {
+  intro: "ReadMe Generator",
+  image: "",
+  description:
+    "A program that auto-generates a README.md file based on user specifications. The program is run in the command line interface (CLI) using Node.js. The README.md file is generated in the same directory as the program, and can be copied to the user's project directory.",
+  ghRepo: "",
+};
+
+const backEnd2 = {
+  intro: "E-Commerce Back-End",
+  image: "",
+  description:
+    "This application reflects a version of back-end code that helps e-commerce sites keep track of site inventory; it utilizes standard CRUD operations: create, read, update, and delete. The application is built with Sequelize and MySQL.",
+  ghRepo: "",
+};
+
+// ... bootcamp back-end
 
 export const Projects = () => {
   useEffect(() => {
