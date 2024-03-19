@@ -189,7 +189,6 @@ body {
   text-align: right;
   min-width: 150px;
   max-width: 175px;
-  padding-top: 4%;
   padding-right: 2%;
 }
 
@@ -276,9 +275,68 @@ body {
 /* bootcamp */
 
 .bootcamp-title {
+  background: linear-gradient(0deg, transparent 0%, #ffffff20 100%);
+  padding-top: 2%;
+  min-width: 100%;
+  /* padding-left: 2%; */
+  padding-bottom: 3%;
+  text-align: center;
+  text-shadow: 1px 2px #000000;
+  border-top: #abd5ffc5 1px solid;
+  border-bottom: #abd5ff20 1px solid;
+}
+
+.bootcamp-subtitle {
+  min-width: 100%;
   padding-left: 2%;
-  border-top: #abd5ffc5 1px solid;
-  border-top: #abd5ffc5 1px solid;
+  padding-right: 2%;
+}
+
+.bootcamp-subtitle h3 {
+  min-width: 100%;
+  margin-top: 4%;
+  padding: 2%;
+  border-left: #5d90c3 2px solid;
+}
+
+.bootcamp-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 0;
+}
+
+.bootcamp-description {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* align-items: center; */
+  max-width: 100%;
+  /* padding-top: 2%; */
+  padding-bottom: 2%;
+}
+
+.bootcamp-description .bootcamp-description-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  min-width: 250px;
+  max-width: 50%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.bootcamp-description .bootcamp-description-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-left: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+  min-width: 250px;
+  max-width: 45%;
 }
 
 /* RESUME */
@@ -373,11 +431,10 @@ body {
   } */
 
   .projects-title {
-    min-width: 100%;
+    /* min-width: 100%; */
     margin: 0%;
     padding: 0%;
     margin-right: 2%;
-    margin-left: 0%;
     padding-right: 2%;
     /* border-left: #f0ffff 2px solid;
     align-items: flex-start;
@@ -386,6 +443,19 @@ body {
     text-align: left;
     min-width: 100%;
     margin: 2%; */
+  }
+
+  .projects-title h2 {
+    margin-bottom: 0;
+  }
+
+  .projects-title p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+  .projects-title h4 {
+    margin-top: 0;
   }
 
   .freelance-description {
@@ -406,6 +476,19 @@ body {
     padding-left: 3%;
     min-width: 250px;
     max-width: 100%;
+  }
+
+  .bootcamp-description .bootcamp-description-right {
+    text-align: start;
+    margin-left: 3%;
+    padding-left: 3%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .bootcamp-description .bootcamp-description-right h3 {
+    border-left: #abd5ff39 1px solid;
+    padding-left: 2%;
   }
 
   .projects-content {

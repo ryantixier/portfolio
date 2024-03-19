@@ -46,7 +46,7 @@ const chipStyle = {
   border: "#6094c140 2px solid",
   boxShadow: "0px 0px 10px 0px #6094c140",
   "&:hover": {
-    // backgroundColor: "#35557140",
+    backgroundColor: "#35557140",
     boxShadow: "0px 0px 10px 0px #6094c180",
   },
 };
@@ -95,7 +95,7 @@ export const FreelanceAside = (props) => {
           >
             <IconButton
               href={props.websiteUrl}
-              disable={!urlPresent}
+              disabled={!urlPresent}
               target="_blank"
               rel="noreferrer"
               sx={iconButtonStyle}
@@ -116,9 +116,6 @@ export const FreelanceAside = (props) => {
                 }
               />
             </IconButton>
-            {/* <a href={props.websiteUrl} target="_blank" rel="noreferrer">
-              Visit: {props.websiteTitle}
-            </a> */}
           </div>
         </div>
         <div className="freelance-content">
@@ -129,12 +126,12 @@ export const FreelanceAside = (props) => {
             className="freelance-description"
             data-aos="fade-up"
             data-aos-duration="800"
-            data-aos-delay="500"
+            data-aos-delay="400"
           >
             <span
               data-aos="fade-left"
               data-aos-duration="800"
-              data-aos-delay="700"
+              data-aos-delay="550"
             >
               <h2>About the site...</h2>
               <p>{props.description}</p>
@@ -142,7 +139,7 @@ export const FreelanceAside = (props) => {
             <ul
               data-aos="fade-right"
               data-aos-duration="800"
-              data-aos-delay="700"
+              data-aos-delay="550"
             >
               <li>
                 <b>Languages:</b>

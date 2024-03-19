@@ -69,6 +69,13 @@
   /* box-shadow: 0px 25px 25px 0px #d8efff45; */
 }
 
+.bootcamp-img {
+  display: flex;
+  border: #abd5ff80 1px solid;
+  min-width: 100%;
+  max-width: 100%;
+}
+
 /* resume */
 .resume-img {
   background: url("../assets/images/myResume.png") no-repeat center center;
