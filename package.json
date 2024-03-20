@@ -20,7 +20,7 @@
     "react-sparkle": "^2.0.0",
     "web-vitals": "^3.5.2"
   },
-  "homepage": "https://ryantixier.github.io/portfolio-revamp",
+  "homepage": "",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build",
