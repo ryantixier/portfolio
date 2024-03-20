@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/portfolio-revamp/static/css/main.472483a6.css",
+    "main.js": "/portfolio-revamp/static/js/main.11a77dc9.js",
+    "static/js/808.5a04df36.chunk.js": "/portfolio-revamp/static/js/808.5a04df36.chunk.js",
+    "static/media/pscScreenshot.jpeg": "/portfolio-revamp/static/media/pscScreenshot.5d4629c5535c4b079007.jpeg",
+    "static/media/back-M9C.jpeg": "/portfolio-revamp/static/media/back-M9C.a1ebe10356604146c721.jpeg",
+    "static/media/back-M13C.jpeg": "/portfolio-revamp/static/media/back-M13C.dbd0111cb3514d9b7441.jpeg",
+    "static/media/myResume.png": "/portfolio-revamp/static/media/myResume.0c60e71f0bc3e40a41e4.png",
+    "static/media/tajScreenshot.jpeg": "/portfolio-revamp/static/media/tajScreenshot.1c56e590338138240e59.jpeg",
+    "static/media/earth.jpeg": "/portfolio-revamp/static/media/earth.bf4914186e6004d9df69.jpeg",
+    "static/media/front-M3C.jpeg": "/portfolio-revamp/static/media/front-M3C.192c789da85ef66be65e.jpeg",
+    "static/media/front-M4C.jpeg": "/portfolio-revamp/static/media/front-M4C.3d08abc43b56748766de.jpeg",
+    "static/media/RT_resume-portfolio.pdf": "/portfolio-revamp/static/media/RT_resume-portfolio.4a86e5736807fd9b27aa.pdf",
+    "static/media/AstroRy-revamp.png": "/portfolio-revamp/static/media/AstroRy-revamp.2973a08304abdccc33d3.png",
+    "static/media/rocketRy.png": "/portfolio-revamp/static/media/rocketRy.666fc5c2bfedfde9a40d.png",
+    "index.html": "/portfolio-revamp/index.html",
+    "main.472483a6.css.map": "/portfolio-revamp/static/css/main.472483a6.css.map",
+    "main.11a77dc9.js.map": "/portfolio-revamp/static/js/main.11a77dc9.js.map",
+    "808.5a04df36.chunk.js.map": "/portfolio-revamp/static/js/808.5a04df36.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.472483a6.css",
+    "static/js/main.11a77dc9.js"
+  ]
+}
