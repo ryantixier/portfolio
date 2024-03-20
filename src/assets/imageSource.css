@@ -57,6 +57,7 @@
 .freelance-img {
   display: flex;
   max-width: 100%;
+  border-top: #abd5ff39 1px solid;
   border-bottom: #abd5ff39 1px solid;
   border-left: transparent;
   border-right: transparent;

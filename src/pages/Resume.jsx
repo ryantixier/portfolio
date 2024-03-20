@@ -37,13 +37,21 @@ import FileDownloadIcon from "@mui/icons-material/FileDownload";
 // INLINE...
 
 // ... content
+// const contentStrings = {
+//   languages: "JavaScript, HTML, CSS",
+//   frontEnd: "ReactJS, Angular",
+//   backEnd: "NodeJS, Bun, ExpressJS, mySQL, MongoDB",
+//   componentLibraries:
+//     "< MaterialUI />, < BootStrap />, < AntDesign />, < FramerMotion />",
+//   other: "“Agile Software Development”, “Git”, “Heroku”, “GitHub Pages”",
+// };
+
 const contentStrings = {
-  languages: "JavaScript, HTML, CSS",
-  frontEnd: "ReactJS, Angular",
-  backEnd: "NodeJS, Bun, ExpressJS, mySQL, MongoDB",
-  componentLibraries:
-    "< MaterialUI />, < BootStrap />, < AntDesign />, < FramerMotion />",
-  other: "“Agile Software Development”, “Git”, “Heroku”, “GitHub Pages”",
+  languages: ["JavaScript", "HTML", "CSS"],
+  frontEnd: ["ReactJS", "Angular"],
+  backEnd: ["NodeJS", "Bun", "ExpressJS", "mySQL", "MongoDB"],
+  componentLibraries: ["MaterialUI", "BootStrap", "AntDesign", "FramerMotion"],
+  other: ["Agile Software Development", "Git", "Heroku", "GitHub Pages"],
 };
 
 const pageHeaderContent = {
@@ -54,7 +62,7 @@ const pageHeaderContent = {
 // ... styles
 const chipStyle = {
   color: "white",
-  backgroundColor: "#35557120",
+  background: "linear-gradient(0deg, #00000039 0%, #5d90c360 100%)",
   padding: "20px",
   minWidth: "300px",
   border: "#6094c140 2px solid",
@@ -72,18 +80,19 @@ const iconButtonStyle = {
   zIndex: 10,
 };
 
-const indentCode = {
-  paddingLeft: "20px",
-};
-
 export const Resume = () => {
-  useEffect(() => {
-    AOS.init({ once: false });
-  }, []);
-
   //Hooks
 
   //Functions
+
+  useEffect(() => {
+    AOS.init({ once: true });
+  }, []);
+
+  const handleTransitionEnd = () => {
+    AOS.refresh();
+    console.log("AOS.refresh");
+  };
 
   return (
     <>
@@ -98,66 +107,185 @@ export const Resume = () => {
         <div
           className="resume-section2"
           data-aos="fade-left"
-          data-aos-duration="700"
+          data-aos-duration="800"
+          onTransitionEnd={handleTransitionEnd}
         >
-          <h2>Skills and Proficiencies</h2>
+          <h2>Resume Preview</h2>
           <h3>
             Ryan is a full-stack web developer who specializes in front-end
             development. He takes pride in working with small businesses to grow
             their online presence.
           </h3>
-          <p>
-            <i>
-              For examples of Ryan's work, please visit the "Projects" page.
-            </i>
-          </p>
-          <br />
-          <code>
-            <b>For Devs -</b> below are Ryan's proficiencies:
-          </code>
-          <br />
-          <code>
-            <b>
-              <i>let</i> webDevelopmentSkills
-            </b>
-            = &#123;
-          </code>
-          <code style={indentCode}>
-            <i>languages</i>: &#123; {contentStrings.languages} &#125;,
-          </code>
-          <code style={indentCode}>
-            <i>frontEnd</i>: &#123; {contentStrings.frontEnd} &#125;,
-          </code>
-          <code style={indentCode}>
-            <i>backEnd</i>: &#123; {contentStrings.backEnd} &#125;,
-          </code>
-          <code style={indentCode}>
-            <i>component</i>: &#91; {contentStrings.componentLibraries} &#93;,
-          </code>
-          <code style={indentCode}>
-            <i>other</i>: &#91; {contentStrings.other} &#93;,
-          </code>
-          <code>&#125;</code>
+
+          <hr />
+
+          <div
+            className="resume-section1"
+            data-aos="fade-left"
+            data-aos-duration="800"
+            data-aos-delay="100"
+          >
+            <h3>Ryan Tixier's Resume:</h3>
+            <div className="resume-img" />
+            <IconButton
+              href={resumeCopy}
+              download="RT-Resume"
+              sx={iconButtonStyle}
+            >
+              <Chip
+                icon={<FileDownloadIcon color="white" />}
+                label="Download Resume"
+                sx={chipStyle}
+              />
+            </IconButton>
+          </div>
+
+          {/* <div className="code-block">
+            <span>
+              <b>For Devs -</b> below are Ryan's proficiencies:
+            </span>
+            <br />
+            <br />
+            <span>
+              <b>
+                <i>let</i> webDevelopmentSkills
+              </b>
+              <span> = &#123;</span>
+            </span>
+            <br />
+            <span>
+              <i style={indent1}>languages</i>: &#123;
+              <ul>
+                {contentStrings.languages.map((language, index) => (
+                  <li key={index}> {language},</li>
+                ))}
+              </ul>
+              <div style={indent1}>&#125;,</div>
+            </span>
+            <span>
+              <i style={indent1}>frontEnd</i>: &#123;
+              <ul>
+                {contentStrings.frontEnd.map((frontEnd, index) => (
+                  <li key={index}> {frontEnd},</li>
+                ))}
+              </ul>
+              <div style={indent1}>&#125;,</div>
+            </span>
+            <span>
+              <i style={indent1}>backEnd</i>: &#123;
+              <ul>
+                {contentStrings.backEnd.map((backEnd, index) => (
+                  <li key={index}>{backEnd},</li>
+                ))}
+              </ul>
+              <div style={indent1}>&#125;,</div>
+            </span>
+            <span>
+              <i style={indent1}>component</i>: &#91;
+              {contentStrings.componentLibraries.map(
+                (componentLibraries, index) => (
+                  <ul>
+                    <li key={index}> {componentLibraries},</li>
+                  </ul>
+                )
+              )}
+              <div style={indent1}>&#93;,</div>
+            </span>
+            <span>
+              <i style={indent1}>other</i>: &#91;{" "}
+              {contentStrings.other.map((other, index) => (
+                <ul>
+                  <li key={index}> {other},</li>
+                </ul>
+              ))}
+              <div style={indent1}>&#93;,</div>
+            </span>
+            <span>
+              <br />
+              &#125;
+            </span>
+          </div> */}
         </div>
         <div
-          className="resume-section1"
+          className="code-block"
           data-aos="fade-right"
           data-aos-duration="800"
-          data-aos-delay="100"
         >
-          <h3>Ryan Tixier's Resume:</h3>
-          <div className="resume-img" />
-          <IconButton
-            href={resumeCopy}
-            download="RT-Resume"
-            sx={iconButtonStyle}
-          >
-            <Chip
-              icon={<FileDownloadIcon color="white" />}
-              label="Download Resume"
-              sx={chipStyle}
-            />
-          </IconButton>
+          <h2>
+            <b>Proficiencies</b>
+          </h2>
+          <br />
+          <aside>
+            <span className="code-indent1">
+              <b>
+                <i>let</i> ryanWebDevSkills
+              </b>
+              <span> = &#123;</span>
+            </span>
+            <br />
+            <span>
+              <i className="code-indent2">languages</i>: &#123;
+              <ul>
+                {contentStrings.languages.map((language, index) => (
+                  <li className="code-indent3" key={index}>
+                    {" "}
+                    {language},
+                  </li>
+                ))}
+              </ul>
+              <div className="code-indent2">&#125;,</div>
+            </span>
+            <span>
+              <i className="code-indent2">frontEnd</i>: &#123;
+              <ul>
+                {contentStrings.frontEnd.map((frontEnd, index) => (
+                  <li className="code-indent3" key={index}>
+                    {frontEnd},
+                  </li>
+                ))}
+              </ul>
+              <div className="code-indent2">&#125;,</div>
+            </span>
+            <span>
+              <i className="code-indent2">backEnd</i>: &#123;
+              <ul>
+                {contentStrings.backEnd.map((backEnd, index) => (
+                  <li className="code-indent3" key={index}>
+                    {backEnd},
+                  </li>
+                ))}
+              </ul>
+              <div className="code-indent2">&#125;,</div>
+            </span>
+            <span>
+              <i className="code-indent2">component</i>: &#91;
+              {contentStrings.componentLibraries.map(
+                (componentLibraries, index) => (
+                  <ul>
+                    <li className="code-indent3" key={index}>
+                      {`< ${componentLibraries} />`},
+                    </li>
+                  </ul>
+                )
+              )}
+              <div className="code-indent2">&#93;,</div>
+            </span>
+            <span>
+              <i className="code-indent2">other</i>: &#91;
+              {contentStrings.other.map((other, index) => (
+                <ul>
+                  <li className="code-indent3" key={index}>
+                    "{other}",
+                  </li>
+                </ul>
+              ))}
+              <div className="code-indent2">&#93;,</div>
+            </span>
+            <span>
+              <br />
+              <div className="code-indent1">&#125;,</div>
+            </span>
+          </aside>
         </div>
       </div>
     </>

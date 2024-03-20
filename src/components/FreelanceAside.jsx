@@ -34,10 +34,11 @@ import LaunchIcon from "@mui/icons-material/Launch";
 // ... styles
 const chipStyle = {
   color: "white",
-  backgroundColor: "#35557120",
+  background: "linear-gradient(0deg, #00000039 0%, #5d90c360 100%)",
   marginTop: "-10px",
   padding: "20px",
-  width: "300px",
+  minWidth: "230px",
+  maxWidth: "100%",
   border: "#6094c140 2px solid",
   boxShadow: "0px 0px 10px 0px #6094c140",
   "&:hover": {
@@ -48,10 +49,11 @@ const chipStyle = {
 
 const chipStyleDisabled = {
   color: "white",
-  backgroundColor: "#00000020",
+  background: "#00000020",
   marginTop: "-10px",
   padding: "20px",
-  width: "300px",
+  minWidth: "230px",
+  maxWidth: "100%",
   border: "#00000040 2px solid",
 };
 
@@ -79,26 +81,38 @@ export const FreelanceAside = (props) => {
   }, [props.websiteUrl]);
   //Functions
   useEffect(() => {
-    AOS.init({ once: false });
     disableLink();
+    AOS.init({ once: true });
   }, [disableLink]);
+
+  // const handleTransitionEnd = () => {
+  //   AOS.refresh();
+  //   console.log("AOS refreshed");
+  // };
 
   return (
     <>
       <div className="projects-aside">
-        <div
-          className="freelance-title"
-          data-aos="fade-up"
-          data-aos-duration="800"
-          data-aos-delay="200"
-        >
-          <h1>{props.name}</h1>
+        <div className="freelance-title">
+          <h1
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="500"
+            // onTransitionEnd={handleTransitionEnd}
+            // onTransitionEnd={console.log("transition end")}
+          >
+            {props.name}
+          </h1>
           <IconButton
             href={props.websiteUrl}
             disabled={!urlPresent}
             target="_blank"
             rel="noreferrer"
             sx={iconButtonStyle}
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="500"
+            // onTransitionEnd={handleTransitionEnd}
           >
             <Chip
               icon={<LaunchIcon color="white" fontSize="inherit" />}
@@ -108,7 +122,12 @@ export const FreelanceAside = (props) => {
           </IconButton>
         </div>
         <div className="freelance-content">
-          <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="400"
+            // onTransitionEnd={handleTransitionEnd}
+          >
             <img className="freelance-img" src={props.image} alt={props.alt} />
           </div>
           <div
@@ -116,11 +135,13 @@ export const FreelanceAside = (props) => {
             data-aos="fade-up"
             data-aos-duration="800"
             data-aos-delay="400"
+            // onTransitionEnd={handleTransitionEnd}
           >
             <span
               data-aos="fade-left"
               data-aos-duration="800"
               data-aos-delay="550"
+              // onTransitionEnd={handleTransitionEnd}
             >
               <h2>About the site...</h2>
               <p>{props.description}</p>
@@ -129,6 +150,7 @@ export const FreelanceAside = (props) => {
               data-aos="fade-right"
               data-aos-duration="800"
               data-aos-delay="550"
+              // onTransitionEnd={handleTransitionEnd}
             >
               <li>
                 <b>Languages:</b>

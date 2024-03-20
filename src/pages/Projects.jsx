@@ -19,8 +19,8 @@ import BootcampAside from "../components/BootcampAside";
 import FreelanceAside from "../components/FreelanceAside";
 
 // ... images
-import pscScreenshot from "../assets/images/website-previews/pscScreenshot.png";
-import tajScreenshot from "../assets/images/website-previews/tajScreenshot.png";
+import pscScreenshot from "../assets/images/website-previews/pscScreenshot.jpeg";
+import tajScreenshot from "../assets/images/website-previews/tajScreenshot.jpeg";
 import frontM3C from "../assets/images/website-previews/front-M3C.jpeg";
 import frontM4C from "../assets/images/website-previews/front-M4C.jpeg";
 import backM9C from "../assets/images/website-previews/back-M9C.jpeg";
@@ -34,20 +34,20 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 // ... MUI components
-import Divider from "@mui/material/Divider";
+// import Divider from "@mui/material/Divider";
 
 // INLINE...
 // INLINE...
 
 // ... styles
-const dividerStyle = {
-  shape: {
-    width: "70%",
-    height: "1px",
-    opacity: 0.4,
-  },
-  color: "#abd5ff",
-};
+// const dividerStyle = {
+//   shape: {
+//     width: "70%",
+//     height: "1px",
+//     opacity: 0.4,
+//   },
+//   color: "#abd5ff",
+// };
 
 // CONTENT/PROPS ...
 // CONTENT/PROPS ...
@@ -98,9 +98,9 @@ const pageTitles = {
   },
 
   bootcamp: {
-    introFeSub: "Front-End Examples:",
-    introBeSub: "Back-end Examples:",
-    subIntro: "Selected Bootcamp Assignments",
+    introFeSub: "Front-End",
+    introBeSub: "Back-End",
+    subIntro: "Example Bootcamp Assignments",
     title: "Bootcamp Development",
     sectionTitle: "University Of Denver (DU) Full-Stack Coding Bootcamp",
   },
@@ -193,13 +193,17 @@ const sectionContent = {
 };
 
 export const Projects = () => {
-  useEffect(() => {
-    AOS.init({ once: false });
-  }, []);
-
   //Hooks
 
-  //Functions
+  // functions
+  useEffect(() => {
+    AOS.init({ once: true });
+  }, []);
+
+  const handleTransitionEnd = () => {
+    AOS.refresh();
+    console.log("AOS.refresh");
+  };
 
   return (
     <>
@@ -213,10 +217,19 @@ export const Projects = () => {
       {/* freelance */}
       <div className="projects-container hide-overflow increase-z">
         <div className="projects-title">
-          <h2 data-aos="fade-left" data-aos-duration="800">
+          <h2
+            data-aos="fade-left"
+            data-aos-duration="800"
+            onTransitionEnd={handleTransitionEnd}
+          >
             {pageTitles.freelance.intro}
           </h2>
-          <h4 data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+          <h4
+            data-aos="fade-left"
+            data-aos-duration="800"
+            data-aos-delay="100"
+            // onTransitionEnd={handleTransitionEnd}
+          >
             <i>{pageTitles.freelance.subtIntro}</i>
           </h4>
         </div>
@@ -262,12 +275,22 @@ export const Projects = () => {
         className="projects-container hide-overflow increase-z"
         data-aos="fade-right"
         data-aos-duration="500"
+        // onTransitionEnd={handleTransitionEnd}
       >
         <div className="projects-title">
-          <h2 data-aos="fade-left" data-aos-duration="800">
+          <h2
+            data-aos="fade-left"
+            data-aos-duration="800"
+            // onTransitionEnd={handleTransitionEnd}
+          >
             {pageTitles.bootcamp.title}
           </h2>
-          <h4 data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+          <h4
+            data-aos="fade-left"
+            data-aos-duration="800"
+            data-aos-delay="100"
+            // onTransitionEnd={handleTransitionEnd}
+          >
             {pageTitles.bootcamp.subIntro}
             {}
           </h4>
@@ -279,6 +302,7 @@ export const Projects = () => {
               data-aos="fade-up"
               data-aos-duration="800"
               data-aos-delay="100"
+              // onTransitionEnd={handleTransitionEnd}
             >
               <h3>{pageTitles.bootcamp.sectionTitle}</h3>
               <h2>
@@ -297,8 +321,8 @@ export const Projects = () => {
               description={sectionContent.frontEnd1.description}
             />
 
-            <Divider color={dividerStyle.color} sx={dividerStyle.shape} />
-            <Divider color={dividerStyle.color} sx={dividerStyle.shape} />
+            {/* <Divider color={dividerStyle.color} sx={dividerStyle.shape} />
+            <Divider color={dividerStyle.color} sx={dividerStyle.shape} /> */}
 
             <BootcampAside
               module={sectionContent.frontEnd2.module}
@@ -319,6 +343,7 @@ export const Projects = () => {
               data-aos="fade-up"
               data-aos-duration="800"
               data-aos-delay="100"
+              // onTransitionEnd={handleTransitionEnd}
             >
               <h3>{pageTitles.bootcamp.sectionTitle}</h3>
               <h2>
@@ -337,8 +362,8 @@ export const Projects = () => {
               description={sectionContent.backEnd1.description}
             />
 
-            <Divider color={dividerStyle.color} sx={dividerStyle.shape} />
-            <Divider color={dividerStyle.color} sx={dividerStyle.shape} />
+            {/* <Divider color={dividerStyle.color} sx={dividerStyle.shape} />
+            <Divider color={dividerStyle.color} sx={dividerStyle.shape} /> */}
 
             <BootcampAside
               module={sectionContent.backEnd2.module}

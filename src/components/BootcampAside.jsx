@@ -19,6 +19,7 @@ import "../assets/imageSource.css";
 
 // ... animations
 import AOS from "aos";
+import "aos/dist/aos.css";
 
 // ... MUI components
 import Chip from "@mui/material/Chip";
@@ -33,9 +34,11 @@ import LaunchIcon from "@mui/icons-material/Launch";
 // ... styles
 const chipStyle = {
   color: "white",
-  backgroundColor: "#35557120",
+  background: "linear-gradient(0deg, #00000039 0%, #5d90c360 100%)",
   padding: "20px",
-  width: "300px",
+  width: "100%",
+  // minWidth: "100%",
+  // maxWidth: "100%",
   border: "#6094c140 2px solid",
   boxShadow: "0px 0px 10px 0px #6094c140",
   "&:hover": {
@@ -63,9 +66,11 @@ export const BootcampAside = (props) => {
     // detects if the prop has a website link (FE) or not (BE)
     if (props.url === undefined || props.url === "") {
       setUrlPresent(false);
+
       // console.log("url not present");
     } else {
       setUrlPresent(true);
+
       // console.log("url present");
     }
 
@@ -81,7 +86,8 @@ export const BootcampAside = (props) => {
 
   useEffect(() => {
     disableLink();
-    AOS.init({ once: false });
+    AOS.init({ once: true });
+    // AOS.refresh();
   }, [disableLink]);
 
   return (
@@ -92,60 +98,74 @@ export const BootcampAside = (props) => {
           data-aos="fade-left"
           data-aos-duration="800"
           data-aos-delay="300"
+          // onTransitionEnd={handleTransitionEnd}
         >
           <h3>
             {props.module}: {props.intro}
           </h3>
         </div>
         <div className="bootcamp-description">
-          <div
-            className="bootcamp-description-left"
-            data-aos="fade-left"
-            data-aos-duration="800"
-            data-aos-delay="300"
-          >
-            <img src={props.image} alt={props.alt} className="bootcamp-img" />
-            <br />
-            <IconButton
-              href={props.ghRepo}
-              disabled={!ghRepoPresent}
-              target="_blank"
-              rel="noreferrer"
-              sx={iconButtonStyle}
-            >
-              <Chip
-                icon={<LaunchIcon color="white" fontSize="inherit" />}
-                label={props.ghLabel}
-                sx={chipStyle}
-              />
-            </IconButton>
-            {urlPresent ? (
-              <IconButton
-                href={props.url}
-                disabled={!urlPresent}
-                target="_blank"
-                rel="noreferrer"
-                sx={iconButtonStyle}
-              >
-                <Chip
-                  icon={<LaunchIcon color="white" fontSize="inherit" />}
-                  label={props.urlLabel}
-                  sx={chipStyle}
-                />
-              </IconButton>
-            ) : (
-              <br />
-            )}
+          <div className="bootcamp-description-left">
+            <img
+              src={props.image}
+              alt={props.alt}
+              className="bootcamp-img"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="300"
+              // onTransitionEnd={handleTransitionEnd}
+            />
           </div>
           <div
             className="bootcamp-description-right"
             data-aos="fade-right"
             data-aos-duration="800"
             data-aos-delay="300"
+            // onTransitionEnd={handleTransitionEnd}
           >
             <h3>Assignment Description:</h3>
             <p>{props.description}</p>
           </div>
+        </div>
+        <div className="bootcamp-description-bottom">
+          <IconButton
+            href={props.ghRepo}
+            disabled={!ghRepoPresent}
+            target="_blank"
+            rel="noreferrer"
+            sx={iconButtonStyle}
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="400"
+            // onTransitionEnd={handleTransitionEnd}
+          >
+            <Chip
+              icon={<LaunchIcon color="white" fontSize="inherit" />}
+              label={props.ghLabel}
+              sx={chipStyle}
+            />
+          </IconButton>
+          {urlPresent ? (
+            <IconButton
+              href={props.url}
+              disabled={!urlPresent}
+              target="_blank"
+              rel="noreferrer"
+              sx={iconButtonStyle}
+              data-aos="fade-up"
+              data-aos-duration="800"
+              data-aos-delay="400"
+              // onTransitionEnd={handleTransitionEnd}
+            >
+              <Chip
+                icon={<LaunchIcon color="white" fontSize="inherit" />}
+                label={props.urlLabel}
+                sx={chipStyle}
+              />
+            </IconButton>
+          ) : (
+            <br />
+          )}
         </div>
       </div>
     </>

@@ -45,15 +45,17 @@ const iconButtonStyle = {
 
 export const PageHeader = (props) => {
   //Hooks
+
+  //Functions
   useEffect(() => {
     AOS.init({ once: true });
   }, []);
 
-  //Functions
   const scrollToPageContent = () => {
     const pageContentElement = document.getElementById("pageContent");
     if (pageContentElement) {
       pageContentElement.scrollIntoView({ behavior: "smooth" });
+      AOS.refresh();
     }
   };
 

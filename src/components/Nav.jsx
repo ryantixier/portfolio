@@ -183,9 +183,9 @@ export const Nav = (props) => {
   const scrollToPageTitle = () => {
     const pageTitleElement = document.getElementById("pageTitle");
     if (pageTitleElement) {
-      setTimeout(() => {
-        pageTitleElement.scrollIntoView({ behavior: "instant" });
-      }, 100);
+      // setTimeout(() => {
+      pageTitleElement.scrollIntoView({ behavior: "instant" });
+      // }, 100);
       //setTImeout function is used to allow the page to render the pageTitle element before scrolling to it; troubleshoots issue where the page would not scroll to the pageTitle element fully
     }
   };
@@ -234,8 +234,8 @@ export const Nav = (props) => {
               <Typography
                 variant="h6"
                 noWrap
-                component={Link}
-                to={paths[0]}
+                // component={Link}
+                // to={paths[0]}
                 onClick={scrollToHeader}
                 sx={{
                   mr: 2,

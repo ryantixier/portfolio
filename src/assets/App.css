@@ -229,7 +229,7 @@ body {
   text-align: center;
   text-shadow: 1px 2px #000000;
   border-top: 1px solid #abd5ffc5;
-  border-bottom: #39585840 2px solid;
+  /* border-bottom: #39585840 2px solid; */
   border-radius: 0 10px 0 10px;
 }
 
@@ -282,17 +282,21 @@ body {
   text-align: center;
   text-shadow: 1px 2px #000000;
   border-top: #abd5ffc5 1px solid;
-  border-bottom: #abd5ff39 2px solid;
+  /* border-bottom: #abd5ff39 2px solid; */
   border-radius: 0 10px 0 10px;
 }
 
 .bootcamp-title h2 {
+  /* background-color: #5d90c310; */
+  background: linear-gradient(0deg, #00000039 0%, #5d90c310 100%);
+
   border-bottom: #5d90c3 1px solid;
   border-top: #5d90c3 1px solid;
+  border-radius: 2% 2% 2% 2%;
   min-width: 50%;
   max-width: 50%;
-  padding: 2%;
   margin-bottom: 0;
+  padding: 2%;
 }
 
 .bootcamp-title h3 {
@@ -309,11 +313,13 @@ body {
 }
 
 .bootcamp-subtitle h3 {
-  text-decoration: underline;
+  /* text-decoration: underline; */
   min-width: 100%;
   margin-top: 4%;
   padding: 2%;
   border-left: #5d90c3 2px solid;
+  border-top: #5d90c3 1px solid;
+  border-radius: 2% 0 0 0;
 }
 
 .bootcamp-content {
@@ -338,20 +344,29 @@ body {
   text-align: center;
   min-width: 250px;
   max-width: 50%;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  padding: 2%;
+  padding-right: 0;
 }
 
 .bootcamp-description .bootcamp-description-right {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
   margin-left: 2%;
-  padding-left: 2%;
+  /* padding-left: 2%; */
   padding-right: 2%;
   min-width: 250px;
   max-width: 45%;
+}
+
+.bootcamp-description-bottom {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  margin-top: 0;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 /* RESUME */
@@ -375,9 +390,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: center;
   justify-content: center;
   padding: 5%;
-  min-width: 35%;
+  min-width: 40%;
+  max-width: 50%;
+}
+
+.resume-section1 h3 {
+  min-width: 100%;
+  max-width: 100%;
+  text-align: center;
 }
 
 .resume-section2 {
@@ -392,11 +415,67 @@ body {
   height: auto;
 }
 
+.resume-section2 hr {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #f0ffff;
+}
+
 .resume-section2 h2 {
   margin-bottom: 0%;
   padding-left: 2%;
-  border-left: #f0ffff 2px solid;
+  padding-right: 2%;
+  border-left: #5d90c3 2px solid;
 }
+
+.code-block {
+  border-left: #abd5ff39 2px solid;
+  margin-top: 5%;
+  padding: 5%;
+  padding-top: 0;
+  min-width: 45%;
+  max-width: 50%;
+}
+
+.code-block h2 {
+  margin-bottom: 0%;
+  padding-left: 2%;
+  border-left: #5d90c3 2px solid;
+}
+
+.code-block aside {
+  border: #abd5ff39 1px solid;
+
+  border-radius: 2% 2% 2% 2%;
+  padding: 3%;
+  margin-left: 5%;
+}
+
+.code-block ul {
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.code-indent1 {
+  padding-left: 0%;
+}
+
+.code-indent2 {
+  padding-left: 10%;
+}
+
+.code-indent3 {
+  padding-left: 20%;
+}
+/* .code-block ul {
+  padding-left: 40%;
+} */
+
+/* .code-block ul li {
+  padding-left: 15%;
+} */
 
 /* MEDIA QUERY - SMALL SCREEN */
 /* MEDIA QUERY - SMALL SCREEN */
@@ -474,7 +553,7 @@ body {
 
   .bootcamp-description .bootcamp-description-left {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
@@ -482,12 +561,14 @@ body {
     max-width: 100%;
     padding-top: 2%;
     padding-bottom: 2%;
+    padding-right: 2%;
   }
 
   .bootcamp-description .bootcamp-description-right {
     text-align: start;
     margin-left: 3%;
-    padding-left: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
     min-width: 100%;
     max-width: 100%;
   }
@@ -504,6 +585,11 @@ body {
   }
 
   /* resume */
+  .resume-container {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
   .resume-section1 {
     min-width: 100%;
   }
@@ -512,5 +598,9 @@ body {
     min-width: 100%;
     border-right: transparent;
     padding: 8%;
+  }
+
+  .code-block {
+    min-width: 100%;
   }
 }

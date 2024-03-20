@@ -62,13 +62,18 @@ const valedictionStyle = {
 };
 
 export const About = () => {
-  useEffect(() => {
-    AOS.init({ once: false });
-  }, []);
-
   //Hooks
 
   //Functions
+
+  useEffect(() => {
+    AOS.init({ once: true });
+  }, []);
+
+  const handleTransitionEnd = () => {
+    AOS.refresh();
+    console.log("AOS.refresh");
+  };
 
   // REMOVED IN ATTEMPT TO SIMPLIFY LAYOUT
   // const scrollToSection2 = () => {
@@ -89,7 +94,11 @@ export const About = () => {
 
       <div className="section-container">
         <div className="section-title">
-          <h2 data-aos="fade-left" data-aos-duration="800">
+          <h2
+            data-aos="fade-left"
+            data-aos-duration="800"
+            onTransitionEnd={handleTransitionEnd}
+          >
             About Ryan
           </h2>
         </div>
