@@ -4,7 +4,6 @@
 
 // general
 import * as React from "react";
-import { useEffect, useState } from "react";
 
 // MUI components
 import IconButton from "@mui/material/IconButton";
@@ -40,9 +39,6 @@ export const Header = () => {
   //Hooks
 
   //Functions
-  const onComplete = () => {
-    console.log("Animation complete!");
-  };
 
   const scrollToPageTitle = () => {
     const pageTitleElement = document.getElementById("pageTitle");
@@ -58,14 +54,12 @@ export const Header = () => {
           className="header-planet"
           initial={{ opacity: 0, x: 150, y: 100, rotate: 5, scale: 1.3 }}
           animate={{ opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }}
-          exit={{ opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }}
           transition={{ duration: 2 }}
         />
         <div className="header-textbox">
           <motion.h1
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            onAnimationComplete={onComplete}
             transition={{ type: "spring", duration: 2, delay: 0.5 }}
           >
             Welcome to the Portfolio of Ryan Tixier:
@@ -73,7 +67,6 @@ export const Header = () => {
           <motion.h3
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            onAnimationComplete={onComplete}
             transition={{ type: "spring", duration: 2.5, delay: 0.75 }}
           >
             Full-stack web developer, space nerd, and all around lovable rascal.
@@ -82,7 +75,6 @@ export const Header = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            onAnimationComplete={onComplete}
             transition={{ type: "spring", delay: 2.5, duration: 1 }}
           >
             <IconButton

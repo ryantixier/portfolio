@@ -54,15 +54,14 @@ const pageHeaderContent = {
 // ... styles
 const chipStyle = {
   color: "white",
-  backgroundColor: "#35557140",
-  marginTop: "-3px",
-  width: "300px",
+  backgroundColor: "#35557120",
+  padding: "20px",
+  minWidth: "300px",
   border: "#6094c140 2px solid",
-  boxShadow: "0px 0px 10px 2px #6094c140",
-  textShadow: "1px 2px #000000",
+  boxShadow: "0px 0px 10px 0px #6094c140",
   "&:hover": {
-    backgroundColor: "#35557180",
-    boxShadow: "0px 0px 20px 2px #6094c180",
+    backgroundColor: "#35557140",
+    boxShadow: "0px 0px 10px 0px #6094c180",
   },
 };
 
@@ -96,107 +95,61 @@ export const Resume = () => {
       {/* PAGE CONTENT BELOW */}
 
       <div className="resume-container hide-overflow">
-        <div className="resume-section2" data-aos="fade-left">
-          <h2 data-aos="fade-left" data-aos-duration="700">
-            Skills and Proficiencies
-          </h2>
-          <h3 data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
+        <div
+          className="resume-section2"
+          data-aos="fade-left"
+          data-aos-duration="700"
+        >
+          <h2>Skills and Proficiencies</h2>
+          <h3>
             Ryan is a full-stack web developer who specializes in front-end
             development. He takes pride in working with small businesses to grow
             their online presence.
           </h3>
-          <p data-aos="fade-left" data-aos-duration="700" data-aos-delay="150">
+          <p>
             <i>
               For examples of Ryan's work, please visit the "Projects" page.
             </i>
           </p>
           <br />
-          <code
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="200"
-          >
+          <code>
             <b>For Devs -</b> below are Ryan's proficiencies:
           </code>
           <br />
-          <code
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="300"
-          >
+          <code>
             <b>
               <i>let</i> webDevelopmentSkills
             </b>
             = &#123;
           </code>
-          <code
-            style={indentCode}
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="400"
-          >
+          <code style={indentCode}>
             <i>languages</i>: &#123; {contentStrings.languages} &#125;,
           </code>
-          <code
-            style={indentCode}
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="500"
-          >
+          <code style={indentCode}>
             <i>frontEnd</i>: &#123; {contentStrings.frontEnd} &#125;,
           </code>
-          <code
-            style={indentCode}
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="500"
-          >
+          <code style={indentCode}>
             <i>backEnd</i>: &#123; {contentStrings.backEnd} &#125;,
           </code>
-          <code
-            style={indentCode}
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="600"
-          >
+          <code style={indentCode}>
             <i>component</i>: &#91; {contentStrings.componentLibraries} &#93;,
           </code>
-          <code
-            style={indentCode}
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="700"
-          >
+          <code style={indentCode}>
             <i>other</i>: &#91; {contentStrings.other} &#93;,
           </code>
-          <code
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="800"
-          >
-            &#125;
-          </code>
+          <code>&#125;</code>
         </div>
-        <div className="resume-section1">
-          <h3
-            data-aos="fade-right"
-            data-aos-duration="1000"
-            data-aos-delay="100"
-          >
-            Ryan Tixier's Resume:
-          </h3>
-          <div
-            className="resume-img"
-            data-aos="fade-right"
-            data-aos-duration="1000"
-            data-aos-delay="100"
-          />
+        <div
+          className="resume-section1"
+          data-aos="fade-right"
+          data-aos-duration="800"
+          data-aos-delay="100"
+        >
+          <h3>Ryan Tixier's Resume:</h3>
+          <div className="resume-img" />
           <IconButton
             href={resumeCopy}
             download="RT-Resume"
-            data-aos="fade-right"
-            data-aos-duration="1000"
-            data-aos-delay="200"
             sx={iconButtonStyle}
           >
             <Chip

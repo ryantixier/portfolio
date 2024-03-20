@@ -57,21 +57,16 @@
 .freelance-img {
   display: flex;
   max-width: 100%;
-  border-top: #abd5ff81 1px solid;
-  border-bottom: #abd5ff81 1px solid;
-
-  /* border-bottom: #6fcfcf 2px solid; */
+  border-bottom: #abd5ff39 1px solid;
   border-left: transparent;
   border-right: transparent;
-  border-radius: 0 0 0% 0%;
-  /* background: linear-gradient(180deg, transparent 0%, #ffffff10 100%); */
-
-  /* box-shadow: 0px 25px 25px 0px #d8efff45; */
+  margin-top: 2px;
 }
 
 .bootcamp-img {
   display: flex;
   border: #abd5ff80 1px solid;
+  border-radius: 2%;
   min-width: 100%;
   max-width: 100%;
 }
@@ -84,7 +79,13 @@
   min-height: 400px;
   margin-top: 3% auto;
   border: #abd5ffc5 1px solid;
-
   border-radius: 2%;
   box-shadow: 0px -3px 20px 2px #abd5ff81;
+}
+
+@media screen and (max-width: 877px) {
+  .bootcamp-img {
+    border-right: transparent;
+    border-left: transparent;
+  }
 }

@@ -5,7 +5,8 @@
 // GENERAL
 // GENERAL
 import * as React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
+
 // LOCAL ...
 // LOCAL ...
 
@@ -13,14 +14,8 @@ import { useEffect, useState } from "react";
 import "../assets/App.css";
 import "../assets/imageSource.css";
 
-// ... components
-
-// ... images
-
 // EXTERNAL ...
 // EXTERNAL ...
-
-// ... styles
 
 // ... animations
 import AOS from "aos";
@@ -35,13 +30,13 @@ import LaunchIcon from "@mui/icons-material/Launch";
 
 // INLINE ...
 // INLINE ...
-// INLINE ...
 
 // ... styles
 const chipStyle = {
   color: "white",
   backgroundColor: "#35557120",
-  marginTop: "-3px",
+  marginTop: "-10px",
+  padding: "20px",
   width: "300px",
   border: "#6094c140 2px solid",
   boxShadow: "0px 0px 10px 0px #6094c140",
@@ -49,6 +44,15 @@ const chipStyle = {
     backgroundColor: "#35557140",
     boxShadow: "0px 0px 10px 0px #6094c180",
   },
+};
+
+const chipStyleDisabled = {
+  color: "white",
+  backgroundColor: "#00000020",
+  marginTop: "-10px",
+  padding: "20px",
+  width: "300px",
+  border: "#00000040 2px solid",
 };
 
 const iconButtonStyle = {
@@ -64,59 +68,44 @@ export const FreelanceAside = (props) => {
   //Hooks
   const [urlPresent, setUrlPresent] = useState(true);
 
-  console.log(props.websiteUrl);
+  // console.log(props.websiteUrl);
 
-  const disableLink = () => {
+  const disableLink = useCallback(() => {
     if (props.websiteUrl === undefined || props.websiteUrl === "") {
       setUrlPresent(false);
     } else {
       setUrlPresent(true);
     }
-  };
-
+  }, [props.websiteUrl]);
   //Functions
   useEffect(() => {
     AOS.init({ once: false });
     disableLink();
-  }, [props.websiteUrl]);
+  }, [disableLink]);
 
   return (
     <>
       <div className="projects-aside">
-        <div className="freelance-title">
-          <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-            {props.name}
-          </h2>
-          <div
-            // for animation of <a> tag
-            data-aos="fade-up"
-            data-aos-duration="800"
-            data-aos-delay="300"
+        <div
+          className="freelance-title"
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-delay="200"
+        >
+          <h1>{props.name}</h1>
+          <IconButton
+            href={props.websiteUrl}
+            disabled={!urlPresent}
+            target="_blank"
+            rel="noreferrer"
+            sx={iconButtonStyle}
           >
-            <IconButton
-              href={props.websiteUrl}
-              disabled={!urlPresent}
-              target="_blank"
-              rel="noreferrer"
-              sx={iconButtonStyle}
-            >
-              <Chip
-                icon={<LaunchIcon color="white" fontSize="inherit" />}
-                label={props.websiteTitle}
-                sx={
-                  urlPresent
-                    ? chipStyle
-                    : {
-                        color: "white",
-                        backgroundColor: "#00000020",
-                        marginTop: "-3px",
-                        width: "300px",
-                        border: "#00000040 2px solid",
-                      }
-                }
-              />
-            </IconButton>
-          </div>
+            <Chip
+              icon={<LaunchIcon color="white" fontSize="inherit" />}
+              label={props.websiteTitle}
+              sx={!urlPresent ? chipStyleDisabled : chipStyle}
+            />
+          </IconButton>
         </div>
         <div className="freelance-content">
           <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">

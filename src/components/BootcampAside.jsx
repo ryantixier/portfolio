@@ -5,7 +5,7 @@
 // GENERAL
 // GENERAL
 import * as React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 // LOCAL ...
 // LOCAL ...
@@ -14,12 +14,8 @@ import { useEffect, useState } from "react";
 import "../assets/App.css";
 import "../assets/imageSource.css";
 
-// ... components
-
 // EXTERNAL ...
 // EXTERNAL ...
-
-// ... styles
 
 // ... animations
 import AOS from "aos";
@@ -33,14 +29,13 @@ import LaunchIcon from "@mui/icons-material/Launch";
 
 // INLINE ...
 // INLINE ...
-// INLINE ...
 
 // ... styles
 const chipStyle = {
   color: "white",
   backgroundColor: "#35557120",
-  marginTop: "-3px",
-  width: "250px",
+  padding: "20px",
+  width: "300px",
   border: "#6094c140 2px solid",
   boxShadow: "0px 0px 10px 0px #6094c140",
   "&:hover": {
@@ -55,44 +50,65 @@ const iconButtonStyle = {
   zIndex: 10,
 };
 
-// ... content
-
 export const BootcampAside = (props) => {
   //Hooks
   const [urlPresent, setUrlPresent] = useState(true);
+  const [ghRepoPresent, setGhRepoPresent] = useState(true);
 
   //Functions
 
-  console.log(props.websiteUrl);
+  // console.log(props.websiteUrl);
 
-  const disableLink = () => {
+  const disableLink = useCallback(() => {
+    // detects if the prop has a website link (FE) or not (BE)
     if (props.url === undefined || props.url === "") {
       setUrlPresent(false);
+      // console.log("url not present");
     } else {
       setUrlPresent(true);
+      // console.log("url present");
     }
-  };
 
-  //Functions
+    // detects if the prop has a github rep link or not
+    if (props.ghRepo === undefined || props.ghRepo === "") {
+      setGhRepoPresent(false);
+      // console.log("ghRepo not present");
+    } else {
+      setGhRepoPresent(true);
+      // console.log("ghRepo present");
+    }
+  }, [props.url, props.ghRepo]);
+
   useEffect(() => {
-    AOS.init({ once: false });
     disableLink();
-  }, [props.websiteUrl]);
+    AOS.init({ once: false });
+  }, [disableLink]);
 
   return (
     <>
       <div className="bootcamp-content">
-        <div className="bootcamp-subtitle">
+        <div
+          className="bootcamp-subtitle"
+          data-aos="fade-left"
+          data-aos-duration="800"
+          data-aos-delay="300"
+        >
           <h3>
             {props.module}: {props.intro}
           </h3>
         </div>
         <div className="bootcamp-description">
-          <div className="bootcamp-description-left">
+          <div
+            className="bootcamp-description-left"
+            data-aos="fade-left"
+            data-aos-duration="800"
+            data-aos-delay="300"
+          >
             <img src={props.image} alt={props.alt} className="bootcamp-img" />
             <br />
             <IconButton
               href={props.ghRepo}
+              disabled={!ghRepoPresent}
               target="_blank"
               rel="noreferrer"
               sx={iconButtonStyle}
@@ -103,23 +119,29 @@ export const BootcampAside = (props) => {
                 sx={chipStyle}
               />
             </IconButton>
-            <IconButton
-              href={props.url}
-              disabled={!urlPresent}
-              target="_blank"
-              rel="noreferrer"
-              sx={iconButtonStyle}
-            >
-              <Chip
-                icon={<LaunchIcon color="white" fontSize="inherit" />}
-                label={props.urlLabel}
-                sx={chipStyle}
-              />
-            </IconButton>
+            {urlPresent ? (
+              <IconButton
+                href={props.url}
+                disabled={!urlPresent}
+                target="_blank"
+                rel="noreferrer"
+                sx={iconButtonStyle}
+              >
+                <Chip
+                  icon={<LaunchIcon color="white" fontSize="inherit" />}
+                  label={props.urlLabel}
+                  sx={chipStyle}
+                />
+              </IconButton>
+            ) : (
+              <br />
+            )}
           </div>
           <div
             className="bootcamp-description-right"
-            // data-aos="fade-up" data-aos-duration="800" data-aos-delay="400"
+            data-aos="fade-right"
+            data-aos-duration="800"
+            data-aos-delay="300"
           >
             <h3>Assignment Description:</h3>
             <p>{props.description}</p>
